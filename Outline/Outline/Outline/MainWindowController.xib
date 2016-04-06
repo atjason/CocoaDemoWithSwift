@@ -54,7 +54,7 @@
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4iM-xd-6JD">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="SaQ-70-Oet">
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="SaQ-70-Oet">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -101,7 +101,7 @@
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-Af-MzD">
                         <rect key="frame" x="20" y="19" width="32" height="23"/>
-                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="net-sn-l5Z" id="i5j-kX-not">
+                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="i5j-kX-not">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" id="VUn-GA-XsW">
@@ -125,7 +125,7 @@
                     </popUpButton>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gs0-O2-mRd">
                         <rect key="frame" x="148" y="19" width="32" height="23"/>
-                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="gBB-ug-Szh">
+                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="nPP-iJ-ako" id="gBB-ug-Szh">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" id="Jz9-GX-iM2">
@@ -133,13 +133,25 @@
                                     <menuItem state="on" image="NSActionTemplate" hidden="YES" id="41B-GF-urD"/>
                                     <menuItem title="Edit" id="nPP-iJ-ako">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="editSelectedItem:" target="-2" id="tVu-uG-JvC"/>
+                                            <binding destination="-2" name="enabled" keyPath="self.editMenuItemEnabled" id="N6y-JX-f0b"/>
+                                        </connections>
                                     </menuItem>
                                     <menuItem isSeparatorItem="YES" id="X4G-vP-Tli"/>
                                     <menuItem title="Move Up" id="8tG-AA-TGp">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="moveItemUp:" target="-2" id="zHf-y7-qic"/>
+                                            <binding destination="-2" name="enabled" keyPath="self.moveUpMenuItemEnabled" id="g5m-Ue-Jo6"/>
+                                        </connections>
                                     </menuItem>
                                     <menuItem title="Move Down" id="k0S-4n-LgP">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="moveItemDown:" target="-2" id="pdY-wM-QXv"/>
+                                            <binding destination="-2" name="enabled" keyPath="self.moveDownMenuItemEnabled" id="3Q8-2O-TNs"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
@@ -151,14 +163,19 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="removeItem:" target="-2" id="sS5-8S-6hO"/>
+                            <binding destination="-2" name="enabled" keyPath="self.removeButtonEnabled" id="Gcm-Pe-TuT"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-140" y="-10"/>
+            <point key="canvasLocation" x="-33" y="-48"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="61z-J4-VXg"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
