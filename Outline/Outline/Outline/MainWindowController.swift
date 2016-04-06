@@ -26,10 +26,14 @@ class MainWindowController: NSWindowController,
     let nodeB = Node(title: "Node B")
     
     group.isGroup = true
+    nodeA.parent = group
+    nodeB.parent = group
     group.children = [nodeA, nodeB]
     
     nodes = [node, group]
   }
+  
+  // MARK: - lifecycle
   
   override func windowWillLoad() {
     initNodes()
@@ -41,6 +45,125 @@ class MainWindowController: NSWindowController,
     let index = 0
     outlineView.scrollRowToVisible(index)
     outlineView.expandItem(nil, expandChildren: true)
+  }
+  
+  // MARK: - Helper Functions
+  
+  func appendItem(item: Node, afterItem: Node?, inout inItems items: [Node]) {
+    
+    if let parent = afterItem?.parent {
+      item.parent = parent
+    }
+    
+    if let afterItem = afterItem {
+      if let index = items.indexOf(afterItem) {
+        items.insert(item, atIndex: index + 1)
+        
+        return
+      }
+    }
+    
+    items.append(item)
+  }
+  
+  func insertItemInOutlineView(item: Node, outlineView: NSOutlineView) {
+    
+    var index = 0
+    var parent: Node? = nil
+    
+    if let itemParent = item.parent {
+      index = itemParent.children.indexOf(item) ?? 0
+      
+      parent = itemParent
+      
+    } else {
+      index = nodes.indexOf(item) ?? 0
+    }
+    
+    outlineView.insertItemsAtIndexes(NSIndexSet(index: index),
+                                     inParent: parent, withAnimation: .EffectFade)
+  }
+  
+  func selectItem(item: Node, outlineView: NSOutlineView) {
+    let index = outlineView.rowForItem(item)
+    outlineView.scrollRowToVisible(index)
+    outlineView.selectRowIndexes(NSIndexSet(index: index), byExtendingSelection: false)
+  }
+  
+  func editSelectedItemInOutlineView(outlineView: NSOutlineView) {
+    let row = outlineView.selectedRow
+    if row != -1 {
+      outlineView.editColumn(0, row: row, withEvent: nil, select: true)
+    }
+  }
+  
+  // MARK: - Actions
+  
+  @IBAction func addNode(sender: NSObject) {
+    let item = Node()
+    
+    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+      
+      // For root item or group
+      if selectedItem.parent == nil || selectedItem.isGroup {
+        
+        appendItem(item, afterItem: selectedItem, inItems: &nodes)
+        
+      } else { // For child item
+        
+        if let parent = selectedItem.parent {
+          
+          appendItem(item, afterItem: selectedItem, inItems: &parent.children)
+          
+        } else {
+          print("Error")
+        }
+      }
+      
+    } else { // Currently now item selected. Insert in the end.
+      nodes.append(item)
+    }
+    
+    insertItemInOutlineView(item, outlineView: outlineView)
+    selectItem(item, outlineView: outlineView)
+    editSelectedItemInOutlineView(outlineView)
+  }
+  
+  @IBAction func addGroup(sender: NSObject) {
+    let item = Node()
+    
+    item.title = "Group"
+    item.isGroup = true
+    
+    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+      
+      // For root item or group
+      if selectedItem.parent == nil || selectedItem.isGroup {
+        
+        appendItem(item, afterItem: selectedItem, inItems: &nodes)
+        
+      } else { // For child item
+        appendItem(item, afterItem: selectedItem.parent, inItems: &nodes)
+      }
+      
+    } else {
+      appendItem(item, afterItem: nil, inItems: &nodes)
+    }
+    
+    // Insert a sub item
+    let subItem = Node()
+    subItem.parent = item
+    
+    appendItem(subItem, afterItem: nil, inItems: &item.children)
+    
+    // Update in outline view.
+    insertItemInOutlineView(item, outlineView: outlineView)
+    insertItemInOutlineView(subItem, outlineView: outlineView)
+    
+    // Must expand parent item before select sub item.
+    outlineView.expandItem(item)
+    selectItem(subItem, outlineView: outlineView)
+    editSelectedItemInOutlineView(outlineView)
   }
   
   // MARK: - NSOutlineViewDataSource

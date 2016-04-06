@@ -107,11 +107,17 @@
                             <menu key="menu" id="VUn-GA-XsW">
                                 <items>
                                     <menuItem state="on" image="NSAddTemplate" hidden="YES" id="NVO-jP-GFq"/>
-                                    <menuItem title="Add Item" id="iFU-Md-5Ju">
+                                    <menuItem title="Add Node" id="iFU-Md-5Ju">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="addNode:" target="-2" id="vnB-lA-0YG"/>
+                                        </connections>
                                     </menuItem>
                                     <menuItem title="Add Group" id="net-sn-l5Z">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="addGroup:" target="-2" id="CMB-4d-Z6j"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
