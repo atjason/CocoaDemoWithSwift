@@ -12,6 +12,7 @@
 		96C4E3F41CB53F75000D1F27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C4E3F21CB53F75000D1F27 /* MainMenu.xib */; };
 		96C4E3FD1CB53F86000D1F27 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C4E3FB1CB53F86000D1F27 /* MainWindowController.swift */; };
 		96C4E3FE1CB53F86000D1F27 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C4E3FC1CB53F86000D1F27 /* MainWindowController.xib */; };
+		96C4E4001CB54095000D1F27 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C4E3FF1CB54095000D1F27 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		96C4E3F51CB53F75000D1F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C4E3FB1CB53F86000D1F27 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		96C4E3FC1CB53F86000D1F27 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		96C4E3FF1CB54095000D1F27 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				96C4E3F51CB53F75000D1F27 /* Info.plist */,
 				96C4E3FB1CB53F86000D1F27 /* MainWindowController.swift */,
 				96C4E3FC1CB53F86000D1F27 /* MainWindowController.xib */,
+				96C4E3FF1CB54095000D1F27 /* Node.swift */,
 			);
 			path = Outline;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C4E4001CB54095000D1F27 /* Node.swift in Sources */,
 				96C4E3FD1CB53F86000D1F27 /* MainWindowController.swift in Sources */,
 				96C4E3EF1CB53F75000D1F27 /* AppDelegate.swift in Sources */,
 			);
@@ -279,6 +283,7 @@
 				96C4E3FA1CB53F75000D1F27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
