@@ -9,6 +9,9 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+  
+  @IBOutlet weak var outlineView: NSOutlineView!
+  
   override var windowNibName: String? {
     return "MainWindowController"
   }
