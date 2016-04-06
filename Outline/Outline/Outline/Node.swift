@@ -12,7 +12,7 @@ class Node: NSObject {
   var title = "Node"
   var isGroup = false
   var children = [Node]()
-  weak var parent: HostsItem?
+  weak var parent: Node?
   
   override init() {
     super.init()
