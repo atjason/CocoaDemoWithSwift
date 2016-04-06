@@ -10,7 +10,9 @@ import Foundation
 
 class Node: NSObject {
   var title = "Node"
+  var isGroup = false
   var children = [Node]()
+  weak var parent: HostsItem?
   
   override init() {
     super.init()
