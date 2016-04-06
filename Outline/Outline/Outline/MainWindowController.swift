@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, NSOutlineViewDataSource {
+class MainWindowController: NSWindowController,
+    NSOutlineViewDataSource, NSOutlineViewDelegate {
   
   @IBOutlet weak var outlineView: NSOutlineView!
   
@@ -50,8 +51,8 @@ class MainWindowController: NSWindowController, NSOutlineViewDataSource {
     if item == nil { // Case of virtual root
       return nodes[index]
       
-    } else if let hostsItem = item as? Node {
-      return hostsItem.children[index]
+    } else if let node = item as? Node {
+      return node.children[index]
       
     } else {
       // TODO: Use better object
@@ -62,12 +63,12 @@ class MainWindowController: NSWindowController, NSOutlineViewDataSource {
   
   func outlineView(outlineView: NSOutlineView,
                    isItemExpandable item: AnyObject) -> Bool {
-    guard let hostsItem = item as? Node else {
+    guard let node = item as? Node else {
       print("Error: invalid object.")
       return false
     }
     
-    return hostsItem.children.count > 0
+    return node.children.count > 0
   }
   
   func outlineView(outlineView: NSOutlineView,
@@ -76,8 +77,8 @@ class MainWindowController: NSWindowController, NSOutlineViewDataSource {
     if item == nil { // Case of virtual root
       return nodes.count
       
-    } else if let hostsItem = item as? Node {
-      return hostsItem.children.count
+    } else if let node = item as? Node {
+      return node.children.count
       
     } else {
       print("Error: invalid object.")
@@ -88,11 +89,30 @@ class MainWindowController: NSWindowController, NSOutlineViewDataSource {
   func outlineView(outlineView: NSOutlineView,
                    objectValueForTableColumn tableColumn: NSTableColumn?,
                                              byItem item: AnyObject?) -> AnyObject? {
-    guard let hostsItem = item as? Node else {
+    guard let node = item as? Node else {
       print("Error: invalid object.")
       return nil
     }
     
-    return hostsItem
+    return node
+  }
+  
+  // MARK: - NSOutlineViewDelegate
+  
+  func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool {
+    
+    guard let node = item as? Node else {
+      return false
+    }
+    
+    return node.isGroup
+  }
+  
+  func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?,
+                   item: AnyObject) -> NSView? {
+    // For a group row, the tableColumn == nil.
+    // In this case use get the column by outlineView.tableColumns[0]
+    let identifier = tableColumn?.identifier ?? outlineView.tableColumns[0].identifier
+    return outlineView.makeViewWithIdentifier(identifier, owner: self)
   }
 }

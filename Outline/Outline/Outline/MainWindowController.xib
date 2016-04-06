@@ -73,6 +73,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="-2" id="0cd-fD-iTK"/>
+                                        <outlet property="delegate" destination="-2" id="wgw-yx-zKg"/>
                                     </connections>
                                 </outlineView>
                             </subviews>
