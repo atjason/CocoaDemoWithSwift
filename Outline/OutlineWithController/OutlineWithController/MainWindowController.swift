@@ -12,6 +12,8 @@ class MainWindowController: NSWindowController {
   
   dynamic var nodes = [Node]()
   
+  @IBOutlet weak var outlineView: NSOutlineView!
+  
   override var windowNibName: String? {
     return "MainWindowController"
   }
@@ -31,5 +33,14 @@ class MainWindowController: NSWindowController {
   
   override func windowWillLoad() {
     initNodes()
+  }
+  
+  // MARK: - Actions
+  
+  @IBAction func editNode(sender: NSObject) {
+    let row = outlineView.selectedRow
+    if row != -1 {
+      outlineView.editColumn(0, row: row, withEvent: nil, select: true)
+    }
   }
 }

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="OutlineWithController" customModuleProvider="target">
             <connections>
+                <outlet property="outlineView" destination="Uhs-ms-LYe" id="3kd-hP-aZ9"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -27,7 +28,7 @@
                             <rect key="frame" x="1" y="0.0" width="158" height="199"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="9PQ-G5-U1P" viewBased="YES" indentationPerLevel="16" outlineTableColumn="8Dx-uj-L3N" id="Uhs-ms-LYe">
+                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="9PQ-G5-U1P" viewBased="YES" indentationPerLevel="16" outlineTableColumn="8Dx-uj-L3N" id="Uhs-ms-LYe">
                                     <rect key="frame" x="0.0" y="0.0" width="158" height="176"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -124,7 +125,7 @@
                     </popUpButton>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0j-vF-e9C">
                         <rect key="frame" x="148" y="19" width="32" height="23"/>
-                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="9qp-Ok-tXI">
+                        <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="XJJ-Kc-DqD" id="9qp-Ok-tXI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" id="EKE-Vc-zV2">
@@ -132,6 +133,10 @@
                                     <menuItem state="on" image="NSActionTemplate" hidden="YES" id="Zxx-dc-rzz"/>
                                     <menuItem title="Edit" id="XJJ-Kc-DqD">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="editNode:" target="-2" id="WQh-ue-wXY"/>
+                                            <binding destination="tue-T0-aG0" name="enabled" keyPath="canRemove" id="8aR-jZ-KAf"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
@@ -145,6 +150,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="remove:" target="tue-T0-aG0" id="2kh-31-jcC"/>
+                            <binding destination="tue-T0-aG0" name="enabled" keyPath="canRemove" id="A7x-sx-41M"/>
                         </connections>
                     </button>
                 </subviews>
@@ -154,7 +160,7 @@
             </connections>
             <point key="canvasLocation" x="204" y="140"/>
         </window>
-        <treeController objectClassName="OutlineWithController.Node" automaticallyPreparesContent="YES" childrenKeyPath="children" id="tue-T0-aG0">
+        <treeController objectClassName="OutlineWithController.Node" automaticallyPreparesContent="YES" childrenKeyPath="children" preservesSelection="NO" id="tue-T0-aG0">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.nodes" id="KLa-lz-qna"/>
             </connections>
