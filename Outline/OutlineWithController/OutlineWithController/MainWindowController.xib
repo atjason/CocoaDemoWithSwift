@@ -138,6 +138,12 @@
             </connections>
             <point key="canvasLocation" x="94" y="147"/>
         </window>
+        <treeController objectClassName="OutlineWithController.Node" automaticallyPreparesContent="YES" childrenKeyPath="children" id="tue-T0-aG0">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="self.nodes" id="KLa-lz-qna"/>
+            </connections>
+        </treeController>
+        <userDefaultsController representsSharedInstance="YES" id="pVh-cp-EEo"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
