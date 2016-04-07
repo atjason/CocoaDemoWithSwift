@@ -1,9 +1,3 @@
----
-date: 2016-04-06 20:38
-status: draft
-title: 'Outline With Controller'
----
-
 #Steps
 ##Create Basic Project
 Refer to commit till [#40ccec2](https://github.com/atjason/CocoaDemoWithSwift/commit/40ccec2db2584251483fe4dc0b9cc02746aebde3).
@@ -33,10 +27,12 @@ class Node: NSObject {
 ## Prepare Demo Nodes Data
 Refer to commit till [#f914811](https://github.com/atjason/CocoaDemoWithSwift/commit/f9148114ec25db9a10e654f776396d1b2a2952a0).
 Node structure:
-\- Node
-\- Group
-\--- Node A
-\--- Node B
+```
+- Node
+- Group
+--- Node A
+--- Node B
+```
 
 ##Add and Configure NSTreeController
 Refer to commit till [#06b01a8](https://github.com/atjason/CocoaDemoWithSwift/commit/06b01a8ffcbe39dc07403ea74f89b8a8ef420015).
@@ -46,10 +42,12 @@ Steps
   * Set the "Key Paths > Children" to "children".  
   * Choose "Mode" Class and set "Class Name" to "OutlineWithController.Node".
   * Select "Prepares Content"
+
 ![](./_image/Outline With Controller/NSTreeController Attricutes Inspector.jpg)
 
 * Go to "Binding Inspector".
   * Bind "Content Array" to self.nodes (which was created in previous step).
+
 ![](./_image/Outline With Controller/NSTreeController Binding Inspector.jpg)
 
 ##Bind NSOutlineView
@@ -102,4 +100,5 @@ The key code is here:
 ##Disable Remove and Edit Controls if no Node Selected
 Refer to commit till [#eb7decd](https://github.com/atjason/CocoaDemoWithSwift/commit/eb7decdf6a2baeb60f6883e287899ab61d825af8).
 The key point is to bind the "Enabled" attribute to tree controller's "canRemove" controller key.
+
 Another point is, when app starts maybe nothing was selected. In this case, disable the Outline's "Attributes > Selection > Empty", and select the Tree Controller's "Attributes > Avoid Empty Selection".
