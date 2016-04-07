@@ -108,9 +108,15 @@
                                     <menuItem state="on" image="NSAddTemplate" hidden="YES" id="oPx-20-fgH"/>
                                     <menuItem title="Add Node" id="Fsl-6P-n5a">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="add:" target="tue-T0-aG0" id="R69-Fb-fzn"/>
+                                        </connections>
                                     </menuItem>
                                     <menuItem title="Add Child Node" id="xjY-DO-03M">
                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                        <connections>
+                                            <action selector="addChild:" target="tue-T0-aG0" id="fGA-1K-py5"/>
+                                        </connections>
                                     </menuItem>
                                 </items>
                             </menu>
@@ -143,7 +149,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="94" y="147"/>
+            <point key="canvasLocation" x="204" y="140"/>
         </window>
         <treeController objectClassName="OutlineWithController.Node" automaticallyPreparesContent="YES" childrenKeyPath="children" id="tue-T0-aG0">
             <connections>
