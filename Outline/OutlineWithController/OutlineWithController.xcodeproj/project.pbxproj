@@ -12,6 +12,7 @@
 		963015871CB6049F003FC212 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963015851CB6049F003FC212 /* MainMenu.xib */; };
 		963015901CB604B1003FC212 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630158E1CB604B1003FC212 /* MainWindowController.swift */; };
 		963015911CB604B1003FC212 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9630158F1CB604B1003FC212 /* MainWindowController.xib */; };
+		963015931CB605C0003FC212 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963015921CB605C0003FC212 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		963015881CB6049F003FC212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9630158E1CB604B1003FC212 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		9630158F1CB604B1003FC212 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		963015921CB605C0003FC212 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				963015831CB6049F003FC212 /* Assets.xcassets */,
 				963015851CB6049F003FC212 /* MainMenu.xib */,
 				963015881CB6049F003FC212 /* Info.plist */,
+				963015921CB605C0003FC212 /* Node.swift */,
 				9630158E1CB604B1003FC212 /* MainWindowController.swift */,
 				9630158F1CB604B1003FC212 /* MainWindowController.xib */,
 			);
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963015931CB605C0003FC212 /* Node.swift in Sources */,
 				963015901CB604B1003FC212 /* MainWindowController.swift in Sources */,
 				963015821CB6049F003FC212 /* AppDelegate.swift in Sources */,
 			);
@@ -279,6 +283,7 @@
 				9630158D1CB6049F003FC212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
