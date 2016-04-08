@@ -53,6 +53,11 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     statusItem.image = nil
     statusItem.title = ""
     
+    if let button = statusItem.button {
+      // FIXME: it works, but obviously not good.
+      button.subviews.removeAll()
+    }
+    
     switch display {
     case .Icon:
       statusItem.image = NSImage.init(imageLiteral: "NSActionTemplate")
@@ -66,12 +71,25 @@ class StatusMenuController: NSObject, NSMenuDelegate {
       // FIXME: now need to set title twice,
       //        otherwise the title can't be fully displayed.
       statusItem.title = StatusItemController.defaultStatusTitle
-      statusItem.image = NSImage.init(imageLiteral: "NSActionTemplate")
+      statusItem.image = NSImage(imageLiteral: "NSActionTemplate")
       statusItem.title = StatusItemController.defaultStatusTitle
       showIconAndTitleMenuItem.state = NSOnState
       
     case .Percent:
       showPercentMenuItem.state = NSOnState
+      
+      if let button = statusItem.button {
+        // FIXME: it works, but obviously not good.
+        let frame = NSRect(x: 6, y: 2, width: 18, height: 18)
+        let progressIndicator = NSProgressIndicator(frame: frame)
+        progressIndicator.style = .SpinningStyle
+        progressIndicator.indeterminate = false
+        progressIndicator.doubleValue = 30
+        
+        // Use empty image to extand the status item's size
+        statusItem.image = NSImage(named: "EmptyIconImage")
+        button.addSubview(progressIndicator)
+      }
     }
   }
   
