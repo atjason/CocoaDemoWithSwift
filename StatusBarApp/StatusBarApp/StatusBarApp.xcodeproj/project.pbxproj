@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96740E871CB7E55200906DD1 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96740E851CB7E55200906DD1 /* PopoverViewController.swift */; };
+		96740E881CB7E55200906DD1 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96740E861CB7E55200906DD1 /* PopoverViewController.xib */; };
 		96FB21931CB755910084BD75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB21921CB755910084BD75 /* AppDelegate.swift */; };
 		96FB21951CB755910084BD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FB21941CB755910084BD75 /* Assets.xcassets */; };
 		96FB21A01CB755F90084BD75 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB219F1CB755F90084BD75 /* StatusItemController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96740E851CB7E55200906DD1 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		96740E861CB7E55200906DD1 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		96FB218F1CB755910084BD75 /* StatusBarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusBarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FB21921CB755910084BD75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FB21941CB755910084BD75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				96FB21991CB755910084BD75 /* Info.plist */,
 				96FB219F1CB755F90084BD75 /* StatusItemController.swift */,
 				96FB21A11CB756280084BD75 /* StatusMenuController.swift */,
+				96740E851CB7E55200906DD1 /* PopoverViewController.swift */,
+				96740E861CB7E55200906DD1 /* PopoverViewController.xib */,
 			);
 			path = StatusBarApp;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			files = (
 				96FB21951CB755910084BD75 /* Assets.xcassets in Resources */,
 				96FB21A71CB758690084BD75 /* MainMenu.xib in Resources */,
+				96740E881CB7E55200906DD1 /* PopoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96740E871CB7E55200906DD1 /* PopoverViewController.swift in Sources */,
 				96FB21A31CB756280084BD75 /* StatusMenuController.swift in Sources */,
 				96FB21A01CB755F90084BD75 /* StatusItemController.swift in Sources */,
 				96FB21931CB755910084BD75 /* AppDelegate.swift in Sources */,

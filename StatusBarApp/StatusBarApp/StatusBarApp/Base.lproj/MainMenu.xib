@@ -61,6 +61,9 @@
                 <menuItem isSeparatorItem="YES" id="ARl-q6-VPz"/>
                 <menuItem title="Mouse Over" id="7HQ-JH-7Ca">
                     <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                    <connections>
+                        <action selector="mouseOverMenuItem:" target="nvF-6S-Q8S" id="bP8-H4-1zj"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="vhy-aS-2gF"/>
                 <menuItem title="Insert Below" id="5ue-SA-7AC">
@@ -90,6 +93,9 @@
                     </menu>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="delegate" destination="nvF-6S-Q8S" id="cZ7-ih-W9i"/>
+            </connections>
             <point key="canvasLocation" x="48" y="379.5"/>
         </menu>
     </objects>
