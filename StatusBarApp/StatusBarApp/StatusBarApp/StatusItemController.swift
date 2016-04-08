@@ -13,6 +13,8 @@ class StatusItemController: NSObject {
   var statusItem: NSStatusItem!
   @IBOutlet weak var menuController: StatusMenuController!
   
+  static let defaultStatusTitle = "App"
+  
   override init() {
     super.init()
   }
@@ -20,8 +22,10 @@ class StatusItemController: NSObject {
   override func awakeFromNib() {
     statusItem = NSStatusBar.systemStatusBar()
       .statusItemWithLength(NSVariableStatusItemLength)
-    statusItem.title = "App"
+    statusItem.title = StatusItemController.defaultStatusTitle
     statusItem.highlightMode = true
     statusItem.menu = menuController.menu
+    
+    menuController.statusItem = statusItem
   }
 }

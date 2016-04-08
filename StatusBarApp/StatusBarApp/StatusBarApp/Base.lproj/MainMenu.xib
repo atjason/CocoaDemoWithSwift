@@ -28,12 +28,21 @@
             <items>
                 <menuItem title="Show Icon" id="2Af-eC-7X6">
                     <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                    <connections>
+                        <action selector="showIcon:" target="nvF-6S-Q8S" id="f5K-6v-Ul3"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Show Title" id="IhJ-4B-fIL">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showTitle:" target="nvF-6S-Q8S" id="h1l-fs-E4m"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Show Both" id="tTO-fI-Mck">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showBoth:" target="nvF-6S-Q8S" id="z9U-Ci-RKU"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Show Percent" id="gKt-Ah-67p">
                     <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
