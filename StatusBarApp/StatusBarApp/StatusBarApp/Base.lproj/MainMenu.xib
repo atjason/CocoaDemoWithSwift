@@ -23,6 +23,8 @@
             <connections>
                 <outlet property="insertMenuItem" destination="5ue-SA-7AC" id="qLE-S2-h3X"/>
                 <outlet property="menu" destination="9HP-V4-9uT" id="TR4-qG-Qyy"/>
+                <outlet property="mouseOverMenuItem" destination="7HQ-JH-7Ca" id="PRr-bx-7A7"/>
+                <outlet property="quitMenuItem" destination="AFm-I3-naS" id="9UN-V3-zBc"/>
                 <outlet property="removeMenuItem" destination="T8m-wP-FuE" id="bvt-dP-2eD"/>
                 <outlet property="showIconAndTitleMenuItem" destination="tTO-fI-Mck" id="7CI-1m-zQz"/>
                 <outlet property="showIconMenuItem" destination="2Af-eC-7X6" id="XMP-W2-xDY"/>
@@ -87,6 +89,9 @@
                         <items>
                             <menuItem title="Quit" id="AFm-I3-naS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="quit:" target="nvF-6S-Q8S" id="LSa-5F-xTt"/>
+                                </connections>
                             </menuItem>
                         </items>
                     </menu>

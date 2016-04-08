@@ -30,7 +30,7 @@ class StatusItemController: NSObject {
     
     // FIXME: it's not good to link each other
     statusItem.menu = menuController.menu
-    menuController.statusItem = statusItem    
-    menuController.updateStatusItemDisplay(.IconAndTitle)
+    menuController.statusItem = statusItem
+    menuController.initMenuStatus()
   }
 }

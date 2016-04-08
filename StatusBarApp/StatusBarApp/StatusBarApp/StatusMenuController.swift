@@ -20,6 +20,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   @IBOutlet weak var insertMenuItem: NSMenuItem!
   @IBOutlet weak var removeMenuItem: NSMenuItem!
   
+  @IBOutlet weak var mouseOverMenuItem: NSMenuItem!
+  @IBOutlet weak var quitMenuItem: NSMenuItem!
+  
   weak var statusItem: NSStatusItem!
   
   // MRAK: - Lifecycle
@@ -32,6 +35,14 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   }
   
   // MRAK: - Helper
+  func initMenuStatus() {
+    updateStatusItemDisplay(.IconAndTitle)
+    
+    removeMenuItem.enabled = false
+    
+    quitMenuItem.keyEquivalent = "q"
+    quitMenuItem.keyEquivalentModifierMask = Int(NSEventModifierFlags.CommandKeyMask.rawValue)
+  }
   
   func updateStatusItemDisplay(display: StatusItemDisplay) {
     showIconMenuItem.state = NSOffState
@@ -102,6 +113,10 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     if (indexOfInsert + 1) == indexToRemove {
       removeMenuItem.enabled = false
     }
+  }
+  
+  @IBAction func quit(sender: NSMenuItem) {
+    NSApplication.sharedApplication().terminate(self)
   }
   
   // MRAK: - NSMenuDelegate
