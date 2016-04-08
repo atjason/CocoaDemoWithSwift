@@ -58,13 +58,6 @@
                         <action selector="showPercent:" target="nvF-6S-Q8S" id="qy6-gk-h20"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="HW4-R5-Vhy"/>
-                <menuItem title="Not Selected" id="mT0-ek-7FR">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Disabled" id="nKg-zI-GLz">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="ARl-q6-VPz"/>
                 <menuItem title="Mouse Over" id="7HQ-JH-7Ca">
                     <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
