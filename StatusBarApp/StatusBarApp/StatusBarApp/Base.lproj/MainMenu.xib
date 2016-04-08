@@ -14,5 +14,61 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="StatusBarApp" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="KjV-v1-pcW" customClass="StatusItemController" customModule="StatusBarApp" customModuleProvider="target">
+            <connections>
+                <outlet property="menuController" destination="nvF-6S-Q8S" id="ueo-tu-rnw"/>
+            </connections>
+        </customObject>
+        <customObject id="nvF-6S-Q8S" customClass="StatusMenuController" customModule="StatusBarApp" customModuleProvider="target">
+            <connections>
+                <outlet property="menu" destination="9HP-V4-9uT" id="TR4-qG-Qyy"/>
+            </connections>
+        </customObject>
+        <menu id="9HP-V4-9uT">
+            <items>
+                <menuItem title="Show Icon" id="2Af-eC-7X6">
+                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                </menuItem>
+                <menuItem title="Show Title" id="IhJ-4B-fIL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Show Both" id="tTO-fI-Mck">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Show Percent" id="gKt-Ah-67p">
+                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="HW4-R5-Vhy"/>
+                <menuItem title="Not Selected" id="mT0-ek-7FR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Disabled" id="nKg-zI-GLz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="ARl-q6-VPz"/>
+                <menuItem title="Mouse Over" id="7HQ-JH-7Ca">
+                    <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="vhy-aS-2gF"/>
+                <menuItem title="Insert Below" id="5ue-SA-7AC">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Delete Above" id="T8m-wP-FuE">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="aqs-zc-kbu"/>
+                <menuItem title="More" id="o6G-gm-Npz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="More" id="LKm-AG-3Ky">
+                        <items>
+                            <menuItem title="Quit" id="AFm-I3-naS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="162.5" y="203.5"/>
+        </menu>
     </objects>
 </document>

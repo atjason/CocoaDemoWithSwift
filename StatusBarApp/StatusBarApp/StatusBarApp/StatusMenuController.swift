@@ -8,11 +8,25 @@
 
 import Cocoa
 
-class StatusMenuController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
+class StatusMenuController: NSObject, NSMenuDelegate {
+  
+  @IBOutlet weak var menu: NSMenu!
+  
+  override init() {
+    super.init()
+  }
+  
+  override func awakeFromNib() {
     
+  }
+  
+  // MRAK: - NSMenuDelegate
+  
+  func menuWillOpen(menu: NSMenu) {
+    
+  }
+  
+  func menuDidClose(menu: NSMenu) {
+    
+  }
 }

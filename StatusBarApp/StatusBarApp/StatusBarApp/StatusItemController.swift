@@ -8,14 +8,20 @@
 
 import Cocoa
 
-class StatusItemController {
+class StatusItemController: NSObject {
 
   var statusItem: NSStatusItem!
+  @IBOutlet weak var menuController: StatusMenuController!
   
-  init() {
-    // -1 means dynamic length
-    statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+  override init() {
+    super.init()
+  }
+  
+  override func awakeFromNib() {
+    statusItem = NSStatusBar.systemStatusBar()
+      .statusItemWithLength(NSVariableStatusItemLength)
     statusItem.title = "App"
     statusItem.highlightMode = true
+    statusItem.menu = menuController.menu
   }
 }

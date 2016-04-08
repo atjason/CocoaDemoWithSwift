@@ -11,7 +11,6 @@
 		96FB21951CB755910084BD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96FB21941CB755910084BD75 /* Assets.xcassets */; };
 		96FB21A01CB755F90084BD75 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB219F1CB755F90084BD75 /* StatusItemController.swift */; };
 		96FB21A31CB756280084BD75 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB21A11CB756280084BD75 /* StatusMenuController.swift */; };
-		96FB21A41CB756280084BD75 /* StatusMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FB21A21CB756280084BD75 /* StatusMenuController.xib */; };
 		96FB21A71CB758690084BD75 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96FB21A51CB758690084BD75 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +21,6 @@
 		96FB21991CB755910084BD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96FB219F1CB755F90084BD75 /* StatusItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		96FB21A11CB756280084BD75 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		96FB21A21CB756280084BD75 /* StatusMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusMenuController.xib; sourceTree = "<group>"; };
 		96FB21A61CB758690084BD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +60,6 @@
 				96FB21991CB755910084BD75 /* Info.plist */,
 				96FB219F1CB755F90084BD75 /* StatusItemController.swift */,
 				96FB21A11CB756280084BD75 /* StatusMenuController.swift */,
-				96FB21A21CB756280084BD75 /* StatusMenuController.xib */,
 			);
 			path = StatusBarApp;
 			sourceTree = "<group>";
@@ -126,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96FB21951CB755910084BD75 /* Assets.xcassets in Resources */,
-				96FB21A41CB756280084BD75 /* StatusMenuController.xib in Resources */,
 				96FB21A71CB758690084BD75 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
