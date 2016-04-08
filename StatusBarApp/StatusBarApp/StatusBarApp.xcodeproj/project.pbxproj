@@ -279,6 +279,7 @@
 				96FB219E1CB755910084BD75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
