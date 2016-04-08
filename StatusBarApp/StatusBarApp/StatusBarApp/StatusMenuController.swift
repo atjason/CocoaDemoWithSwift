@@ -25,6 +25,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   weak var statusItem: NSStatusItem!
   
+  let popover = NSPopover()
+  
   // MRAK: - Lifecycle
   
   override init() {
@@ -100,6 +102,28 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
   }
   
+  func showPopover(sender: AnyObject?) {
+    if popover.contentViewController == nil {
+      popover.contentViewController = NSViewController(nibName: "PopoverViewController", bundle: nil)
+    }
+    
+    if let button = statusItem.button {
+      popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
+    }
+  }
+  
+  func closePopover(sender: AnyObject?) {
+    popover.performClose(sender)
+  }
+  
+  func togglePopover(sender: AnyObject?) {
+    if popover.shown {
+      closePopover(sender)
+    } else {
+      showPopover(sender)
+    }
+  }
+  
   // MRAK: - Actions
   @IBAction func showIcon(sender: NSMenuItem) {
     updateStatusItemDisplay(.Icon)
@@ -115,6 +139,10 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   @IBAction func showPercent(sender: NSMenuItem) {
     updateStatusItemDisplay(.Percent)
+  }
+  
+  @IBAction func mouseOverMenuItem(sender: NSMenuItem) {
+    togglePopover(sender)
   }
   
   @IBAction func insertMenuItem(sender: NSMenuItem) {
@@ -148,11 +176,16 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   // MRAK: - NSMenuDelegate
   
-  func menuWillOpen(menu: NSMenu) {
-    
+  func menu(menu: NSMenu, willHighlightItem item: NSMenuItem?) {
+    if item === mouseOverMenuItem {
+      showPopover(item)
+      //item?.toolTip = ""
+    } else {
+      closePopover(menu)
+    }
   }
   
   func menuDidClose(menu: NSMenu) {
-    
+    closePopover(menu)
   }
 }
