@@ -8,11 +8,14 @@
 
 import Cocoa
 
-class StatusItemController: NSViewController {
+class StatusItemController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
-    
+  var statusItem: NSStatusItem!
+  
+  init() {
+    // -1 means dynamic length
+    statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    statusItem.title = "App"
+    statusItem.highlightMode = true
+  }
 }

@@ -10,18 +10,18 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-  @IBOutlet weak var window: NSWindow!
-
-
+  
+  var statusItem: NSStatusItem!
+  var statusItemController: StatusItemController?
+  
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    // Insert code here to initialize your application
+    let statusItemController = StatusItemController()
+    
+    self.statusItemController = statusItemController
+    
+//    statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+//    statusItem.title = "App"
+//    statusItem.highlightMode = true
   }
-
-  func applicationWillTerminate(aNotification: NSNotification) {
-    // Insert code here to tear down your application
-  }
-
-
 }
 
