@@ -25,6 +25,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   weak var statusItem: NSStatusItem!
   
+  var hiddenWindowController: NSWindowController?
+  
   let popover = NSPopover()
   
   // MRAK: - Lifecycle
@@ -102,18 +104,52 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
   }
   
+  func initHiddenWindowController() {
+    let hiddenWindow = NSWindow()
+    
+    let size = 30 // A small size to let the window be covered by status menu.
+    hiddenWindow.styleMask = NSBorderlessWindowMask
+    hiddenWindow.setFrame(NSRect(x: size, y: size, width: size, height: size), display: true)
+    
+    hiddenWindowController = NSWindowController()
+    hiddenWindowController?.window = hiddenWindow
+  }
+  
   func showPopover(sender: AnyObject?) {
     if popover.contentViewController == nil {
       popover.contentViewController = NSViewController(nibName: "PopoverViewController", bundle: nil)
     }
     
-    if let button = statusItem.button {
-      popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
+//    if let button = statusItem.button {
+//      popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
+//    }
+    
+    if hiddenWindowController == nil {
+      initHiddenWindowController()
+    }
+    
+    if let window = hiddenWindowController?.window {
+      
+      if let view = window.contentView {
+        
+        if let statusItemWindow = statusItem.button?.window {
+          
+          var point = NSPoint()
+          point.x = statusItemWindow.frame.origin.x
+          point.y = NSEvent.mouseLocation().y + window.frame.size.height / 2.0
+          window.setFrameTopLeftPoint(point)
+          
+          hiddenWindowController?.showWindow(self)
+          
+          popover.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MinX)
+        }
+      }
     }
   }
   
   func closePopover(sender: AnyObject?) {
     popover.performClose(sender)
+    hiddenWindowController?.window?.close()
   }
   
   func togglePopover(sender: AnyObject?) {
@@ -183,9 +219,5 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     } else {
       closePopover(menu)
     }
-  }
-  
-  func menuDidClose(menu: NSMenu) {
-    closePopover(menu)
   }
 }
