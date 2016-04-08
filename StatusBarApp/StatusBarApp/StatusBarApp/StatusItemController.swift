@@ -8,6 +8,10 @@
 
 import Cocoa
 
+enum StatusItemDisplay {
+  case Icon, Title, IconAndTitle, Percent
+}
+
 class StatusItemController: NSObject {
 
   var statusItem: NSStatusItem!

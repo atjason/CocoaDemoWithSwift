@@ -41,7 +41,7 @@
                 <menuItem title="Show Both" id="tTO-fI-Mck">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="showBoth:" target="nvF-6S-Q8S" id="z9U-Ci-RKU"/>
+                        <action selector="showIconAndTitle:" target="nvF-6S-Q8S" id="X4j-hM-sIm"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Show Percent" id="gKt-Ah-67p">
@@ -77,7 +77,7 @@
                     </menu>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="162.5" y="203.5"/>
+            <point key="canvasLocation" x="48" y="379.5"/>
         </menu>
     </objects>
 </document>
