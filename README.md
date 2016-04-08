@@ -1,2 +1,2 @@
 # CocoaDemoWithSwift
-Separate and completed Cocoa demo with Swift.
+Indenpendent Cocoa demo with Swift.
