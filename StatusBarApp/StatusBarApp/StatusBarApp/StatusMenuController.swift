@@ -38,10 +38,14 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   func initMenuStatus() {
     updateStatusItemDisplay(.IconAndTitle)
     
-    removeMenuItem.enabled = false
-    
     quitMenuItem.keyEquivalent = "q"
     quitMenuItem.keyEquivalentModifierMask = Int(NSEventModifierFlags.CommandKeyMask.rawValue)
+    
+    // Please read the comments for this property:
+    /* Set and get whether the menu autoenables items.  If a menu autoenables items, then calls to -[NSMenuItem setEnabled:] are ignored, and the enabled state is computed via the NSMenuValidation informal protocol below.  Autoenabling is on by default. */
+    menu.autoenablesItems = false
+    
+    removeMenuItem.enabled = false
   }
   
   func updateStatusItemDisplay(display: StatusItemDisplay) {
@@ -113,6 +117,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   @IBAction func insertMenuItem(sender: NSMenuItem) {
     let menuItem = NSMenuItem.init(title: "New Item",
                                    action: Selector(), keyEquivalent: "")
+    menuItem.enabled = false
     
     let index = menu.indexOfItem(sender) + 1
     menu.insertItem(menuItem, atIndex: index)

@@ -69,7 +69,7 @@
                         <action selector="insertMenuItem:" target="nvF-6S-Q8S" id="CG7-Td-ZcA"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Remove Above" enabled="NO" id="T8m-wP-FuE">
+                <menuItem title="Remove Above" id="T8m-wP-FuE">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="removeMenuItem:" target="nvF-6S-Q8S" id="nVm-XM-hXj"/>
