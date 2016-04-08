@@ -65,6 +65,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     switch display {
     case .Icon:
       statusItem.image = NSImage.init(imageLiteral: "NSActionTemplate")
+      statusItem.image?.template = true
       showIconMenuItem.state = NSOnState
       
     case .Title:
@@ -76,6 +77,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
       //        otherwise the title can't be fully displayed.
       statusItem.title = StatusItemController.defaultStatusTitle
       statusItem.image = NSImage(imageLiteral: "NSActionTemplate")
+      statusItem.image?.template = true
       statusItem.title = StatusItemController.defaultStatusTitle
       showIconAndTitleMenuItem.state = NSOnState
       
@@ -92,6 +94,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         
         // Use empty image to extand the status item's size
         statusItem.image = NSImage(named: "EmptyIconImage")
+        statusItem.image?.template = true
         button.addSubview(progressIndicator)
       }
     }
