@@ -121,6 +121,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     let menuItem = NSMenuItem.init(title: "New Item",
                                    action: Selector(), keyEquivalent: "")
     menuItem.enabled = false
+    menuItem.indentationLevel = sender.indentationLevel + 1
     
     let index = menu.indexOfItem(sender) + 1
     menu.insertItem(menuItem, atIndex: index)
