@@ -26,10 +26,11 @@ class StatusItemController: NSObject {
   override func awakeFromNib() {
     statusItem = NSStatusBar.systemStatusBar()
       .statusItemWithLength(NSVariableStatusItemLength)
-    statusItem.title = StatusItemController.defaultStatusTitle
     statusItem.highlightMode = true
-    statusItem.menu = menuController.menu
     
-    menuController.statusItem = statusItem
+    // FIXME: it's not good to link each other
+    statusItem.menu = menuController.menu
+    menuController.statusItem = statusItem    
+    menuController.updateStatusItemDisplay(.IconAndTitle)
   }
 }

@@ -12,6 +12,11 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   @IBOutlet weak var menu: NSMenu!
   
+  @IBOutlet weak var showIconMenuItem: NSMenuItem!
+  @IBOutlet weak var showTitleMenuItem: NSMenuItem!
+  @IBOutlet weak var showIconAndTitleMenuItem: NSMenuItem!
+  @IBOutlet weak var showPercentMenuItem: NSMenuItem!
+  
   weak var statusItem: NSStatusItem!
   
   // MRAK: - Lifecycle
@@ -21,31 +26,38 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   }
   
   override func awakeFromNib() {
-    
   }
   
   // MRAK: - Helper
   
   func updateStatusItemDisplay(display: StatusItemDisplay) {
+    showIconMenuItem.state = NSOffState
+    showTitleMenuItem.state = NSOffState
+    showIconAndTitleMenuItem.state = NSOffState
+    showPercentMenuItem.state = NSOffState
+    
+    statusItem.image = nil
+    statusItem.title = ""
+    
     switch display {
     case .Icon:
       statusItem.image = NSImage.init(imageLiteral: "NSActionTemplate")
-      statusItem.title = ""
+      showIconMenuItem.state = NSOnState
       
     case .Title:
-      statusItem.image = nil
       statusItem.title = StatusItemController.defaultStatusTitle
+      showTitleMenuItem.state = NSOnState
       
     case .IconAndTitle:
-      // Note: need to first set the image, and then the title,
-      //       otherwise the length of status item will be incorrect.
-      // FIXME: switch status between title/icon/both for many times,
-      //        sometimes the title can't be fully displayed in both status.
+      // FIXME: now need to set title twice,
+      //        otherwise the title can't be fully displayed.
+      statusItem.title = StatusItemController.defaultStatusTitle
       statusItem.image = NSImage.init(imageLiteral: "NSActionTemplate")
       statusItem.title = StatusItemController.defaultStatusTitle
+      showIconAndTitleMenuItem.state = NSOnState
       
     case .Percent:
-      break
+      showPercentMenuItem.state = NSOnState
     }
   }
   

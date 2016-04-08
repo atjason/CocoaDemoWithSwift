@@ -22,6 +22,10 @@
         <customObject id="nvF-6S-Q8S" customClass="StatusMenuController" customModule="StatusBarApp" customModuleProvider="target">
             <connections>
                 <outlet property="menu" destination="9HP-V4-9uT" id="TR4-qG-Qyy"/>
+                <outlet property="showIconAndTitleMenuItem" destination="tTO-fI-Mck" id="7CI-1m-zQz"/>
+                <outlet property="showIconMenuItem" destination="2Af-eC-7X6" id="XMP-W2-xDY"/>
+                <outlet property="showPercentMenuItem" destination="gKt-Ah-67p" id="K65-Bl-ikj"/>
+                <outlet property="showTitleMenuItem" destination="IhJ-4B-fIL" id="9zf-8E-h6w"/>
             </connections>
         </customObject>
         <menu id="9HP-V4-9uT">
