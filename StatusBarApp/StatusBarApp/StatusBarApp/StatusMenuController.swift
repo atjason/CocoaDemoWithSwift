@@ -17,6 +17,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   @IBOutlet weak var showIconAndTitleMenuItem: NSMenuItem!
   @IBOutlet weak var showPercentMenuItem: NSMenuItem!
   
+  @IBOutlet weak var insertMenuItem: NSMenuItem!
+  @IBOutlet weak var removeMenuItem: NSMenuItem!
+  
   weak var statusItem: NSStatusItem!
   
   // MRAK: - Lifecycle
@@ -72,6 +75,33 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   @IBAction func showIconAndTitle(sender: NSMenuItem) {
     updateStatusItemDisplay(.IconAndTitle)
+  }
+  
+  @IBAction func showPercent(sender: NSMenuItem) {
+    updateStatusItemDisplay(.Percent)
+  }
+  
+  @IBAction func insertMenuItem(sender: NSMenuItem) {
+    let menuItem = NSMenuItem.init(title: "New Item",
+                                   action: Selector(), keyEquivalent: "")
+    
+    let index = menu.indexOfItem(sender) + 1
+    menu.insertItem(menuItem, atIndex: index)
+    
+    removeMenuItem.enabled = true
+  }
+  
+  @IBAction func removeMenuItem(sender: NSMenuItem) {
+    let indexToRemove = menu.indexOfItem(sender) - 1
+    let indexOfInsert = menu.indexOfItem(insertMenuItem)
+    
+    if indexToRemove != indexOfInsert {
+      menu.removeItemAtIndex(indexToRemove)
+    }
+    
+    if (indexOfInsert + 1) == indexToRemove {
+      removeMenuItem.enabled = false
+    }
   }
   
   // MRAK: - NSMenuDelegate
