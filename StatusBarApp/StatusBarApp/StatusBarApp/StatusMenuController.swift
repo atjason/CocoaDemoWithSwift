@@ -110,6 +110,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     let size = 30 // A small size to let the window be covered by status menu.
     hiddenWindow.styleMask = NSBorderlessWindowMask
     hiddenWindow.setFrame(NSRect(x: size, y: size, width: size, height: size), display: true)
+    hiddenWindow.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))
     
     hiddenWindowController = NSWindowController()
     hiddenWindowController?.window = hiddenWindow
@@ -122,9 +123,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
     
 //    if let button = statusItem.button {
-//      popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
+//      popover?.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
 //    }
-    
+
     if hiddenWindowController == nil {
       initHiddenWindowController()
     }
