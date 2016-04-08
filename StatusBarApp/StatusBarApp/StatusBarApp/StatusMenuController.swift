@@ -27,7 +27,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   var hiddenWindowController: NSWindowController?
   
-  let popover = NSPopover()
+  var popover: NSPopover?
   
   // MRAK: - Lifecycle
   
@@ -116,8 +116,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   }
   
   func showPopover(sender: AnyObject?) {
-    if popover.contentViewController == nil {
-      popover.contentViewController = NSViewController(nibName: "PopoverViewController", bundle: nil)
+    if popover?.contentViewController == nil {
+      popover = NSPopover()
+      popover?.contentViewController = NSViewController(nibName: "PopoverViewController", bundle: nil)
     }
     
 //    if let button = statusItem.button {
@@ -141,22 +142,24 @@ class StatusMenuController: NSObject, NSMenuDelegate {
           
           hiddenWindowController?.showWindow(self)
           
-          popover.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MinX)
+          popover?.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MinX)
         }
       }
     }
   }
   
   func closePopover(sender: AnyObject?) {
-    popover.performClose(sender)
+    popover?.performClose(sender)
     hiddenWindowController?.window?.close()
   }
   
   func togglePopover(sender: AnyObject?) {
-    if popover.shown {
-      closePopover(sender)
-    } else {
-      showPopover(sender)
+    if let popover = popover {
+      if popover.shown {
+        closePopover(sender)
+      } else {
+        showPopover(sender)
+      }
     }
   }
   
