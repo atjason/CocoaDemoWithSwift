@@ -50,6 +50,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     menu.autoenablesItems = false
     
     removeMenuItem.enabled = false
+    
+    // Set menu item's image
+    mouseOverMenuItem.image = NSImage(imageLiteral: "NSIconViewTemplate")
   }
   
   func updateStatusItemDisplay(display: StatusItemDisplay) {
