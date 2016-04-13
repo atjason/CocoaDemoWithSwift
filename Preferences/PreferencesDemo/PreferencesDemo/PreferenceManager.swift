@@ -19,9 +19,20 @@ class PreferenceManager {
   let userDefaults = NSUserDefaults.standardUserDefaults()
   
   private let initializedKey = "Initialized"
+  private let startAtLoginKey = "Start At Login"
   private let tabViewSizesKey = "Preferences Tab View Sizes"
   
   private let defaultTabViewSizes = [String: SizeArchiver]()
+  
+  var startAtLogin: Bool {
+    get {
+      return userDefaults.boolForKey(startAtLoginKey)
+    }
+    
+    set {
+      userDefaults.setBool(newValue, forKey: startAtLoginKey)
+    }
+  }
   
   var initialized: Bool {
     get {
@@ -52,6 +63,7 @@ class PreferenceManager {
   
   func registerFactoryDefaults() {
     let factoryDefaults = [
+      startAtLoginKey: NSNumber(bool: false),
       initializedKey: NSNumber(bool: false),
       tabViewSizesKey: defaultTabViewSizes,
     ]
