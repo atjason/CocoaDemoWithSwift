@@ -89,10 +89,19 @@
         <!--Advanced-->
         <scene sceneID="So3-gQ-ayP">
             <objects>
-                <viewController title="Advanced" showSeguePresentationStyle="single" id="1Ht-B6-99Y" sceneMemberID="viewController">
+                <viewController title="Advanced" showSeguePresentationStyle="single" id="1Ht-B6-99Y" customClass="AdvancedViewController" customModule="PreferencesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sl5-f7-gvV">
                         <rect key="frame" x="0.0" y="0.0" width="261" height="185"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-Lf-wVu">
+                                <rect key="frame" x="14" y="137" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MbM-IV-q3P">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="Jh6-3w-1Wm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

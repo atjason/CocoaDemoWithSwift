@@ -16,6 +16,8 @@ class GeneralViewController: NSViewController {
   private let preferenceManager = PreferenceManager.sharedInstance
   
   override func viewDidLoad() {
+    super.viewDidLoad()
+    
     // Note: Beside this way, another way is directly bound to user defaults.
     //       Check the bind for "Warn before quit".
     startAtLogin = preferenceManager.startAtLogin

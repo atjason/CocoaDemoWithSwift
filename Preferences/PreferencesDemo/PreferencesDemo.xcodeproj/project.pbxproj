@@ -18,6 +18,7 @@
 		9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2761CBDF791009501A0 /* SizeArchiver.swift */; };
 		9619A27A1CBE27C4009501A0 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2791CBE27C4009501A0 /* PreferenceManager.swift */; };
 		9619A27C1CBE2A13009501A0 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A27B1CBE2A13009501A0 /* GeneralViewController.swift */; };
+		9619A27E1CBE2C71009501A0 /* AdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A27D1CBE2C71009501A0 /* AdvancedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9619A2761CBDF791009501A0 /* SizeArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizeArchiver.swift; path = Preferences/SizeArchiver.swift; sourceTree = "<group>"; };
 		9619A2791CBE27C4009501A0 /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		9619A27B1CBE2A13009501A0 /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralViewController.swift; path = Preferences/GeneralViewController.swift; sourceTree = "<group>"; };
+		9619A27D1CBE2C71009501A0 /* AdvancedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,7 @@
 				9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */,
 				9619A2781CBE27AC009501A0 /* Modal */,
 				9619A26E1CBDE9FD009501A0 /* General */,
-				9619A26F1CBDEA02009501A0 /* Options */,
+				9619A26F1CBDEA02009501A0 /* Advanced */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -98,11 +100,12 @@
 			name = General;
 			sourceTree = "<group>";
 		};
-		9619A26F1CBDEA02009501A0 /* Options */ = {
+		9619A26F1CBDEA02009501A0 /* Advanced */ = {
 			isa = PBXGroup;
 			children = (
+				9619A27D1CBE2C71009501A0 /* AdvancedViewController.swift */,
 			);
-			name = Options;
+			name = Advanced;
 			sourceTree = "<group>";
 		};
 		9619A2781CBE27AC009501A0 /* Modal */ = {
@@ -190,6 +193,7 @@
 				9619A27C1CBE2A13009501A0 /* GeneralViewController.swift in Sources */,
 				9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */,
 				9619A26B1CBDE924009501A0 /* MainWindowController.swift in Sources */,
+				9619A27E1CBE2C71009501A0 /* AdvancedViewController.swift in Sources */,
 				9619A25D1CBDE8FF009501A0 /* AppDelegate.swift in Sources */,
 				9619A27A1CBE27C4009501A0 /* PreferenceManager.swift in Sources */,
 				9619A2751CBDEE16009501A0 /* PreferencesViewController.swift in Sources */,
