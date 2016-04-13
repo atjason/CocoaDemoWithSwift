@@ -10,11 +10,13 @@ import Cocoa
 
 class AdvancedViewController: NSViewController {
   
+  private let preferenceManager = PreferenceManager.sharedInstance
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 
   @IBAction func reset(sender: NSButton) {
-    
+    preferenceManager.reset()
   }
 }

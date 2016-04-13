@@ -27,6 +27,8 @@ class PreferencesViewController: NSTabViewController {
   }
   
   override func viewWillDisappear() {
+    super.viewWillDisappear()
+    
     saveTabViewSizes()
   }
   

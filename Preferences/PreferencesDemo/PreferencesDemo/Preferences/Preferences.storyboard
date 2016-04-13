@@ -75,7 +75,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <binding destination="l3O-fA-1T5" name="value" keyPath="values.warnBeforeQuit" id="8Ry-hS-LYj"/>
+                                    <binding destination="l3O-fA-1T5" name="value" keyPath="values.Warn Before Quit" id="UHj-sM-WPl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,6 +100,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="reset:" target="1Ht-B6-99Y" id="eZI-ek-wLb"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

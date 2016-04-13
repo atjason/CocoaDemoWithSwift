@@ -17,6 +17,10 @@ class GeneralViewController: NSViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear() {
+    super.viewWillAppear()
     
     // Note: Beside this way, another way is directly bound to user defaults.
     //       Check the bind for "Warn before quit".
@@ -24,6 +28,8 @@ class GeneralViewController: NSViewController {
   }
   
   override func viewWillDisappear() {
+    super.viewWillDisappear()
+    
     preferenceManager.startAtLogin = startAtLogin
     preferenceManager.synchronize()
   }
