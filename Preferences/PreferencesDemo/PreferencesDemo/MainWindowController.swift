@@ -12,4 +12,8 @@ class MainWindowController: NSWindowController {
   override var windowNibName: String? {
     return "MainWindowController"
   }
+  
+  @IBAction func showPreferences(sender: NSButton) {
+    
+  }
 }
