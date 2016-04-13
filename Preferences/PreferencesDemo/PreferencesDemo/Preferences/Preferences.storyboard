@@ -53,13 +53,26 @@
         <!--General-->
         <scene sceneID="06q-eQ-7i1">
             <objects>
-                <viewController title="General" showSeguePresentationStyle="single" id="LZT-7J-ceD" sceneMemberID="viewController">
+                <viewController title="General" showSeguePresentationStyle="single" id="LZT-7J-ceD" customClass="GeneralViewController" customModule="PreferencesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wM6-FS-gTh">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="118"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-S2-xgu">
+                                <rect key="frame" x="18" y="82" width="101" height="18"/>
+                                <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7QT-vI-cQ1">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="LZT-7J-ceD" name="value" keyPath="self.startAtLogin" id="Bdb-tx-xb1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="pGa-5C-6wH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="l3O-fA-1T5"/>
             </objects>
             <point key="canvasLocation" x="742" y="230"/>
         </scene>
