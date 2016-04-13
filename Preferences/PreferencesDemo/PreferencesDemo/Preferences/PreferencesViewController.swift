@@ -33,20 +33,18 @@ class PreferencesViewController: NSTabViewController {
   // MARK: - Helper
   
   func readTabViewSizes() {
-    var sizesInitialized = false
-    
     let userDefaults = NSUserDefaults.standardUserDefaults()
     if let data = userDefaults.objectForKey(tabViewSizesKey) as? NSData {
       if let sizes = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: SizeArchiver] {
         tabViewSizes = sizes
-        sizesInitialized = true
       }
     }
     
-    if !sizesInitialized {
-      for tabViewItem in tabViewItems {
+    for tabViewItem in tabViewItems {
+      let label = tabViewItem.label
+      if tabViewSizes[label] == nil {
         if let size = tabViewItem.view?.frame.size {
-          tabViewSizes[tabViewItem.label] = SizeArchiver(size: size)
+          tabViewSizes[label] = SizeArchiver(size: size)
         }
       }
     }
