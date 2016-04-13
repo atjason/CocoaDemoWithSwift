@@ -12,6 +12,8 @@
 		9619A2621CBDE8FF009501A0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9619A2601CBDE8FF009501A0 /* MainMenu.xib */; };
 		9619A26B1CBDE924009501A0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2691CBDE924009501A0 /* MainWindowController.swift */; };
 		9619A26C1CBDE924009501A0 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9619A26A1CBDE924009501A0 /* MainWindowController.xib */; };
+		9619A2711CBDEA26009501A0 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9619A2701CBDEA26009501A0 /* Preferences.storyboard */; };
+		9619A2731CBDEA76009501A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9619A2631CBDE8FF009501A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9619A2691CBDE924009501A0 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		9619A26A1CBDE924009501A0 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		9619A2701CBDEA26009501A0 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preferences.storyboard; path = Preferences/Preferences.storyboard; sourceTree = "<group>"; };
+		9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesWindowController.swift; path = Preferences/PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,34 @@
 				9619A2631CBDE8FF009501A0 /* Info.plist */,
 				9619A2691CBDE924009501A0 /* MainWindowController.swift */,
 				9619A26A1CBDE924009501A0 /* MainWindowController.xib */,
+				9619A26D1CBDE9F4009501A0 /* Preferences */,
 			);
 			path = PreferencesDemo;
+			sourceTree = "<group>";
+		};
+		9619A26D1CBDE9F4009501A0 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				9619A2701CBDEA26009501A0 /* Preferences.storyboard */,
+				9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */,
+				9619A26E1CBDE9FD009501A0 /* General */,
+				9619A26F1CBDEA02009501A0 /* Options */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		9619A26E1CBDE9FD009501A0 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		9619A26F1CBDEA02009501A0 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Options;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +155,7 @@
 				9619A25F1CBDE8FF009501A0 /* Assets.xcassets in Resources */,
 				9619A26C1CBDE924009501A0 /* MainWindowController.xib in Resources */,
 				9619A2621CBDE8FF009501A0 /* MainMenu.xib in Resources */,
+				9619A2711CBDEA26009501A0 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9619A2731CBDEA76009501A0 /* PreferencesWindowController.swift in Sources */,
 				9619A26B1CBDE924009501A0 /* MainWindowController.swift in Sources */,
 				9619A25D1CBDE8FF009501A0 /* AppDelegate.swift in Sources */,
 			);
