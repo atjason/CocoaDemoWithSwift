@@ -20,6 +20,7 @@ class PreferenceManager {
   
   private let initializedKey = "Initialized"
   private let startAtLoginKey = "Start At Login"
+  private let warnBeforeQuitKey = "Warn Before Quit"
   private let tabViewSizesKey = "Preferences Tab View Sizes"
   
   private let defaultTabViewSizes = [String: SizeArchiver]()
@@ -44,6 +45,16 @@ class PreferenceManager {
     }
   }
   
+  var warnBeforeQuit: Bool {
+    get {
+      return userDefaults.boolForKey(warnBeforeQuitKey)
+    }
+    
+    set {
+      userDefaults.setBool(newValue, forKey: warnBeforeQuitKey)
+    }
+  }
+  
   var tabViewSizes: [String: SizeArchiver] {
     get {
       if let data = userDefaults.objectForKey(tabViewSizesKey) as? NSData {
@@ -63,8 +74,9 @@ class PreferenceManager {
   
   func registerFactoryDefaults() {
     let factoryDefaults = [
-      startAtLoginKey: NSNumber(bool: false),
       initializedKey: NSNumber(bool: false),
+      startAtLoginKey: NSNumber(bool: false),
+      warnBeforeQuitKey: NSNumber(bool: false),
       tabViewSizesKey: defaultTabViewSizes,
     ]
     
@@ -76,6 +88,11 @@ class PreferenceManager {
   }
   
   func reset() {
+    userDefaults.removeObjectForKey(initializedKey)
+    userDefaults.removeObjectForKey(startAtLoginKey)
+    userDefaults.removeObjectForKey(warnBeforeQuitKey)
+    userDefaults.removeObjectForKey(tabViewSizesKey)
     
+    synchronize()
   }
 }
