@@ -16,6 +16,7 @@
 		9619A2731CBDEA76009501A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */; };
 		9619A2751CBDEE16009501A0 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */; };
 		9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2761CBDF791009501A0 /* SizeArchiver.swift */; };
+		9619A27A1CBE27C4009501A0 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2791CBE27C4009501A0 /* PreferenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesWindowController.swift; path = Preferences/PreferencesWindowController.swift; sourceTree = "<group>"; };
 		9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = Preferences/PreferencesViewController.swift; sourceTree = "<group>"; };
 		9619A2761CBDF791009501A0 /* SizeArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizeArchiver.swift; path = Preferences/SizeArchiver.swift; sourceTree = "<group>"; };
+		9619A2791CBE27C4009501A0 /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,10 @@
 		9619A26D1CBDE9F4009501A0 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				9619A2761CBDF791009501A0 /* SizeArchiver.swift */,
 				9619A2701CBDEA26009501A0 /* Preferences.storyboard */,
 				9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */,
 				9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */,
+				9619A2781CBE27AC009501A0 /* Modal */,
 				9619A26E1CBDE9FD009501A0 /* General */,
 				9619A26F1CBDEA02009501A0 /* Options */,
 			);
@@ -98,6 +100,15 @@
 			children = (
 			);
 			name = Options;
+			sourceTree = "<group>";
+		};
+		9619A2781CBE27AC009501A0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				9619A2761CBDF791009501A0 /* SizeArchiver.swift */,
+				9619A2791CBE27C4009501A0 /* PreferenceManager.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */,
 				9619A26B1CBDE924009501A0 /* MainWindowController.swift in Sources */,
 				9619A25D1CBDE8FF009501A0 /* AppDelegate.swift in Sources */,
+				9619A27A1CBE27C4009501A0 /* PreferenceManager.swift in Sources */,
 				9619A2751CBDEE16009501A0 /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +331,7 @@
 				9619A2681CBDE8FF009501A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
