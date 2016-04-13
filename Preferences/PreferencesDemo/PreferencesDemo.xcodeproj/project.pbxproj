@@ -15,6 +15,7 @@
 		9619A2711CBDEA26009501A0 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9619A2701CBDEA26009501A0 /* Preferences.storyboard */; };
 		9619A2731CBDEA76009501A0 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */; };
 		9619A2751CBDEE16009501A0 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */; };
+		9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619A2761CBDF791009501A0 /* SizeArchiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9619A2701CBDEA26009501A0 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preferences.storyboard; path = Preferences/Preferences.storyboard; sourceTree = "<group>"; };
 		9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesWindowController.swift; path = Preferences/PreferencesWindowController.swift; sourceTree = "<group>"; };
 		9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesViewController.swift; path = Preferences/PreferencesViewController.swift; sourceTree = "<group>"; };
+		9619A2761CBDF791009501A0 /* SizeArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizeArchiver.swift; path = Preferences/SizeArchiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		9619A26D1CBDE9F4009501A0 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				9619A2761CBDF791009501A0 /* SizeArchiver.swift */,
 				9619A2701CBDEA26009501A0 /* Preferences.storyboard */,
 				9619A2721CBDEA76009501A0 /* PreferencesWindowController.swift */,
 				9619A2741CBDEE16009501A0 /* PreferencesViewController.swift */,
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9619A2731CBDEA76009501A0 /* PreferencesWindowController.swift in Sources */,
+				9619A2771CBDF791009501A0 /* SizeArchiver.swift in Sources */,
 				9619A26B1CBDE924009501A0 /* MainWindowController.swift in Sources */,
 				9619A25D1CBDE8FF009501A0 /* AppDelegate.swift in Sources */,
 				9619A2751CBDEE16009501A0 /* PreferencesViewController.swift in Sources */,
