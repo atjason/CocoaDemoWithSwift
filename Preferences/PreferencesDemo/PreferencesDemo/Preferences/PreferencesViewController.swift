@@ -16,7 +16,7 @@ import Cocoa
 
 class PreferencesViewController: NSTabViewController {
   
-  private let tabViewSizesKey = "Preferences Tab View Sizes"
+  private let preferenceManager = PreferenceManager.sharedInstance
   
   var tabViewSizes = [String: SizeArchiver]()
   
@@ -33,12 +33,7 @@ class PreferencesViewController: NSTabViewController {
   // MARK: - Helper
   
   func readTabViewSizes() {
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    if let data = userDefaults.objectForKey(tabViewSizesKey) as? NSData {
-      if let sizes = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: SizeArchiver] {
-        tabViewSizes = sizes
-      }
-    }
+    tabViewSizes = preferenceManager.tabViewSizes
     
     for tabViewItem in tabViewItems {
       let label = tabViewItem.label
@@ -51,9 +46,8 @@ class PreferencesViewController: NSTabViewController {
   }
   
   func saveTabViewSizes() {
-    let data = NSKeyedArchiver.archivedDataWithRootObject(tabViewSizes)
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    userDefaults.setObject(data, forKey: tabViewSizesKey)
+    preferenceManager.tabViewSizes = tabViewSizes
+    preferenceManager.synchronize()
   }
   
   // MARK: - NSTabViewDelegate

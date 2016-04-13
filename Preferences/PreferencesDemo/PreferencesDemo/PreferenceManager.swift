@@ -19,6 +19,9 @@ class PreferenceManager {
   let userDefaults = NSUserDefaults.standardUserDefaults()
   
   private let initializedKey = "Initialized"
+  private let tabViewSizesKey = "Preferences Tab View Sizes"
+  
+  private let defaultTabViewSizes = [String: SizeArchiver]()
   
   var initialized: Bool {
     get {
@@ -30,29 +33,27 @@ class PreferenceManager {
     }
   }
   
-//  var nodes: [Node] {
-//    get {
-//      if let data = userDefaults.objectForKey(hostNodesKey) as? NSData {
-//        if let nodes = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [Node] {
-//          return nodes
-//        }
-//      }
-//      
-//      return defaultHostNodes
-//    }
-//    
-//    set {
-//      let data = NSKeyedArchiver.archivedDataWithRootObject(newValue)
-//      userDefaults.setObject(data, forKey: hostNodesKey)
-//    }
-//  }
+  var tabViewSizes: [String: SizeArchiver] {
+    get {
+      if let data = userDefaults.objectForKey(tabViewSizesKey) as? NSData {
+        if let sizes = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: SizeArchiver] {
+          return sizes
+        }
+      }
+      
+      return defaultTabViewSizes
+    }
+    
+    set {
+      let data = NSKeyedArchiver.archivedDataWithRootObject(newValue)
+      userDefaults.setObject(data, forKey: tabViewSizesKey)
+    }
+  }
   
   func registerFactoryDefaults() {
     let factoryDefaults = [
       initializedKey: NSNumber(bool: false),
-//      everPromptUserForHostsChangedKey: NSNumber(bool: false),
-//      activateOneItemInOneGroupKey: NSNumber(bool: false),
-//      hostNodesKey: defaultHostNodes,
+      tabViewSizesKey: defaultTabViewSizes,
     ]
     
     userDefaults.registerDefaults(factoryDefaults)
@@ -60,5 +61,9 @@ class PreferenceManager {
   
   func synchronize() {
     userDefaults.synchronize()
+  }
+  
+  func reset() {
+    
   }
 }
