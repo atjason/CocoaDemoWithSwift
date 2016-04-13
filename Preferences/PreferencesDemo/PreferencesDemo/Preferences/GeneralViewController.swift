@@ -10,11 +10,14 @@ import Cocoa
 
 class GeneralViewController: NSViewController {
   
+  // Note: Should bind the checkbox's value to it.
   dynamic var startAtLogin = false
   
   private let preferenceManager = PreferenceManager.sharedInstance
   
   override func viewDidLoad() {
+    // Note: Beside this way, another way is directly bound to user defaults.
+    //       Check the bind for "Warn before quit".
     startAtLogin = preferenceManager.startAtLogin
   }
   
