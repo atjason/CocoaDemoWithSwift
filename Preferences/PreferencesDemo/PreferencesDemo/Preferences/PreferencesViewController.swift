@@ -11,7 +11,7 @@ import Cocoa
 /*!
  * In the storyboard, ensure
      the view controller's transition checkboxes are all off
-     the NSTabView's delegate is set to this controller object
+     the NSTabView's delegate is set to this controller object.
  */
 
 class PreferencesViewController: NSTabViewController {

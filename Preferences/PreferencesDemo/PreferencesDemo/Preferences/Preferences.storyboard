@@ -12,7 +12,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FeR-zH-Hbe">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="contentRect" x="163" y="199" width="346" height="183"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                     </window>
                     <connections>
@@ -21,7 +21,7 @@
                 </windowController>
                 <customObject id="3Rt-3p-x14" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="100"/>
+            <point key="canvasLocation" x="210" y="199.5"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="0FG-E9-0ej">
@@ -33,7 +33,7 @@
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="R6W-fv-Zqj">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="281" height="190"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
@@ -48,18 +48,18 @@
                 </tabViewController>
                 <customObject id="Vcd-2u-cDr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="530"/>
+            <point key="canvasLocation" x="210.5" y="504"/>
         </scene>
         <!--General-->
         <scene sceneID="06q-eQ-7i1">
             <objects>
                 <viewController title="General" showSeguePresentationStyle="single" id="LZT-7J-ceD" customClass="GeneralViewController" customModule="PreferencesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="wM6-FS-gTh">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="118"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="74"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJD-S2-xgu">
-                                <rect key="frame" x="18" y="82" width="101" height="18"/>
+                                <rect key="frame" x="18" y="38" width="101" height="18"/>
                                 <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7QT-vI-cQ1">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pnK-SF-O5G">
-                                <rect key="frame" x="18" y="62" width="124" height="18"/>
+                                <rect key="frame" x="18" y="18" width="124" height="18"/>
                                 <buttonCell key="cell" type="check" title="Warn before quit" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="s6o-bj-T4W">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -84,18 +84,18 @@
                 <customObject id="pGa-5C-6wH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="l3O-fA-1T5"/>
             </objects>
-            <point key="canvasLocation" x="742" y="230"/>
+            <point key="canvasLocation" x="558" y="228"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="So3-gQ-ayP">
             <objects>
                 <viewController title="Advanced" showSeguePresentationStyle="single" id="1Ht-B6-99Y" customClass="AdvancedViewController" customModule="PreferencesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="sl5-f7-gvV">
-                        <rect key="frame" x="0.0" y="0.0" width="261" height="185"/>
+                        <rect key="frame" x="0.0" y="0.0" width="123" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-Lf-wVu">
-                                <rect key="frame" x="14" y="137" width="75" height="32"/>
+                                <rect key="frame" x="14" y="35" width="75" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MbM-IV-q3P">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -109,7 +109,7 @@
                 </viewController>
                 <customObject id="Jh6-3w-1Wm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.5" y="560.5"/>
+            <point key="canvasLocation" x="539.5" y="557.5"/>
         </scene>
     </scenes>
     <resources>

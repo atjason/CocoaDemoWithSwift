@@ -72,7 +72,7 @@ class PreferenceManager {
     }
   }
   
-  func registerFactoryDefaults() {
+  private func registerFactoryDefaults() {
     let factoryDefaults = [
       initializedKey: NSNumber(bool: false),
       startAtLoginKey: NSNumber(bool: false),
