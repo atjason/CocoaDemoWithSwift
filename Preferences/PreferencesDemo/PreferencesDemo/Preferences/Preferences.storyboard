@@ -37,6 +37,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="OaK-xu-sDc" id="afP-oL-0xo"/>
+                        </connections>
                     </tabView>
                     <connections>
                         <segue destination="LZT-7J-ceD" kind="relationship" relationship="tabItems" id="YEo-ud-6pq"/>
@@ -52,26 +55,26 @@
             <objects>
                 <viewController title="General" showSeguePresentationStyle="single" id="LZT-7J-ceD" sceneMemberID="viewController">
                     <view key="view" id="wM6-FS-gTh">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="118"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="pGa-5C-6wH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="321"/>
+            <point key="canvasLocation" x="742" y="230"/>
         </scene>
         <!--Advanced-->
         <scene sceneID="So3-gQ-ayP">
             <objects>
                 <viewController title="Advanced" showSeguePresentationStyle="single" id="1Ht-B6-99Y" sceneMemberID="viewController">
                     <view key="view" id="sl5-f7-gvV">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="185"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
                 <customObject id="Jh6-3w-1Wm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="682"/>
+            <point key="canvasLocation" x="792.5" y="560.5"/>
         </scene>
     </scenes>
     <resources>
