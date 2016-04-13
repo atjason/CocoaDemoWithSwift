@@ -16,35 +16,66 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                     </window>
                     <connections>
-                        <segue destination="oYN-JJ-Qzh" kind="relationship" relationship="window.shadowedContentViewController" id="qxH-q3-0mj"/>
+                        <segue destination="OaK-xu-sDc" kind="relationship" relationship="window.shadowedContentViewController" id="cys-wb-Bno"/>
                     </connections>
                 </windowController>
                 <customObject id="3Rt-3p-x14" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="210" y="100"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="l3X-tX-x4Q">
+        <!--Preferences View Controller-->
+        <scene sceneID="0FG-E9-0ej">
             <objects>
-                <viewController id="oYN-JJ-Qzh" sceneMemberID="viewController">
-                    <view key="view" id="Evr-EL-cRb">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <tabViewController showSeguePresentationStyle="single" tabStyle="toolbar" id="OaK-xu-sDc" customClass="PreferencesViewController" customModule="PreferencesDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="nhV-Bn-eeH"/>
+                        <tabViewItem label="Advanced" identifier="" image="NSAdvanced" id="Rwq-Ml-Vgr"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
+                    <tabView key="tabView" type="noTabsNoBorder" id="R6W-fv-Zqj">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-OG-ABr">
-                                <rect key="frame" x="223" y="127" width="35" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hello" id="TnA-0Z-Sdn">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="LZT-7J-ceD" kind="relationship" relationship="tabItems" id="YEo-ud-6pq"/>
+                        <segue destination="1Ht-B6-99Y" kind="relationship" relationship="tabItems" id="4Bc-M2-FZ6"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="Vcd-2u-cDr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="530"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="06q-eQ-7i1">
+            <objects>
+                <viewController title="General" showSeguePresentationStyle="single" id="LZT-7J-ceD" sceneMemberID="viewController">
+                    <view key="view" id="wM6-FS-gTh">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="8So-pc-m73" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="pGa-5C-6wH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="526"/>
+            <point key="canvasLocation" x="887" y="321"/>
+        </scene>
+        <!--Advanced-->
+        <scene sceneID="So3-gQ-ayP">
+            <objects>
+                <viewController title="Advanced" showSeguePresentationStyle="single" id="1Ht-B6-99Y" sceneMemberID="viewController">
+                    <view key="view" id="sl5-f7-gvV">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Jh6-3w-1Wm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="682"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+    </resources>
 </document>
