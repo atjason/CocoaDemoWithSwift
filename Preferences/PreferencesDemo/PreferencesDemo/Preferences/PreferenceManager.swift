@@ -25,16 +25,6 @@ class PreferenceManager {
   
   private let defaultTabViewSizes = [String: SizeArchiver]()
   
-  var startAtLogin: Bool {
-    get {
-      return userDefaults.boolForKey(startAtLoginKey)
-    }
-    
-    set {
-      userDefaults.setBool(newValue, forKey: startAtLoginKey)
-    }
-  }
-  
   var initialized: Bool {
     get {
       return userDefaults.boolForKey(initializedKey)
@@ -42,6 +32,16 @@ class PreferenceManager {
     
     set {
       userDefaults.setBool(newValue, forKey: initializedKey)
+    }
+  }
+  
+  var startAtLogin: Bool {
+    get {
+      return userDefaults.boolForKey(startAtLoginKey)
+    }
+    
+    set {
+      userDefaults.setBool(newValue, forKey: startAtLoginKey)
     }
   }
   
