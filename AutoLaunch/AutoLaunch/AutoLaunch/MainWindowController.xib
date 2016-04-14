@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="AutoLaunch" customModuleProvider="target">
             <connections>
+                <outlet property="autoLaunchCheckbox" destination="E3F-Pw-dm4" id="ePe-4v-xDT"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -28,7 +29,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.autoLaunch" id="zby-KF-EtO"/>
+                            <binding destination="fKQ-yg-gz7" name="value" keyPath="values.Auto Launch" id="4T8-Hp-2nY"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwG-Ud-X80">
@@ -48,5 +49,6 @@
             </connections>
             <point key="canvasLocation" x="159" y="262.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="fKQ-yg-gz7"/>
     </objects>
 </document>

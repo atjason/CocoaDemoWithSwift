@@ -11,7 +11,7 @@ import ServiceManagement
 
 class MainWindowController: NSWindowController {
   
-  dynamic var autoLaunch = false
+  @IBOutlet weak var autoLaunchCheckbox: NSButton!
   
   override var windowNibName: String? {
     return "MainWindowController"
@@ -20,7 +20,7 @@ class MainWindowController: NSWindowController {
   @IBAction func set(sender: NSButton) {
     
     let appBundleIdentifier = "com.atjason.swift.cocoa.AutoLaunchHelper"
-    
+    let autoLaunch = (autoLaunchCheckbox.state == NSOnState)
     if SMLoginItemSetEnabled(appBundleIdentifier, autoLaunch) {
       if autoLaunch {
         NSLog("Successfully add login item.")
