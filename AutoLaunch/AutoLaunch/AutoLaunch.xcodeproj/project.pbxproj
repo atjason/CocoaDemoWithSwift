@@ -16,7 +16,21 @@
 		96093E8D1CBF92AB00184619 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96093E8C1CBF92AB00184619 /* main.m */; };
 		96093E8F1CBF92AB00184619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96093E8E1CBF92AB00184619 /* Assets.xcassets */; };
 		96093E921CBF92AB00184619 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96093E901CBF92AB00184619 /* MainMenu.xib */; };
+		96093E9A1CBF93B600184619 /* AutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96093E861CBF92AB00184619 /* AutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96093E991CBF93AE00184619 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				96093E9A1CBF93B600184619 /* AutoLaunchHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		96093E6E1CBF914500184619 /* AutoLaunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLaunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +129,7 @@
 				96093E6A1CBF914500184619 /* Sources */,
 				96093E6B1CBF914500184619 /* Frameworks */,
 				96093E6C1CBF914500184619 /* Resources */,
+				96093E991CBF93AE00184619 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -357,6 +372,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atjason.swift.cocoa.AutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -369,6 +385,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atjason.swift.cocoa.AutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
