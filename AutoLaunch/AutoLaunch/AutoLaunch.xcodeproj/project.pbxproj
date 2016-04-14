@@ -12,6 +12,10 @@
 		96093E771CBF914500184619 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96093E751CBF914500184619 /* MainMenu.xib */; };
 		96093E801CBF915D00184619 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96093E7E1CBF915D00184619 /* MainWindowController.swift */; };
 		96093E811CBF915D00184619 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96093E7F1CBF915D00184619 /* MainWindowController.xib */; };
+		96093E8A1CBF92AB00184619 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96093E891CBF92AB00184619 /* AppDelegate.m */; };
+		96093E8D1CBF92AB00184619 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96093E8C1CBF92AB00184619 /* main.m */; };
+		96093E8F1CBF92AB00184619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96093E8E1CBF92AB00184619 /* Assets.xcassets */; };
+		96093E921CBF92AB00184619 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96093E901CBF92AB00184619 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +26,24 @@
 		96093E781CBF914500184619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96093E7E1CBF915D00184619 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		96093E7F1CBF915D00184619 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		96093E861CBF92AB00184619 /* AutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96093E881CBF92AB00184619 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		96093E891CBF92AB00184619 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		96093E8C1CBF92AB00184619 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96093E8E1CBF92AB00184619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96093E911CBF92AB00184619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		96093E931CBF92AB00184619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		96093E6B1CBF914500184619 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96093E831CBF92AB00184619 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				96093E701CBF914500184619 /* AutoLaunch */,
+				96093E871CBF92AB00184619 /* AutoLaunchHelper */,
 				96093E6F1CBF914500184619 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				96093E6E1CBF914500184619 /* AutoLaunch.app */,
+				96093E861CBF92AB00184619 /* AutoLaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +82,27 @@
 				96093E7F1CBF915D00184619 /* MainWindowController.xib */,
 			);
 			path = AutoLaunch;
+			sourceTree = "<group>";
+		};
+		96093E871CBF92AB00184619 /* AutoLaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				96093E881CBF92AB00184619 /* AppDelegate.h */,
+				96093E891CBF92AB00184619 /* AppDelegate.m */,
+				96093E8E1CBF92AB00184619 /* Assets.xcassets */,
+				96093E901CBF92AB00184619 /* MainMenu.xib */,
+				96093E931CBF92AB00184619 /* Info.plist */,
+				96093E8B1CBF92AB00184619 /* Supporting Files */,
+			);
+			path = AutoLaunchHelper;
+			sourceTree = "<group>";
+		};
+		96093E8B1CBF92AB00184619 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96093E8C1CBF92AB00184619 /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +125,23 @@
 			productReference = 96093E6E1CBF914500184619 /* AutoLaunch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		96093E851CBF92AB00184619 /* AutoLaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96093E941CBF92AB00184619 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */;
+			buildPhases = (
+				96093E821CBF92AB00184619 /* Sources */,
+				96093E831CBF92AB00184619 /* Frameworks */,
+				96093E841CBF92AB00184619 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoLaunchHelper;
+			productName = AutoLaunchHelper;
+			productReference = 96093E861CBF92AB00184619 /* AutoLaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +153,9 @@
 				ORGANIZATIONNAME = "Jason Zheng";
 				TargetAttributes = {
 					96093E6D1CBF914500184619 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					96093E851CBF92AB00184619 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -113,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				96093E6D1CBF914500184619 /* AutoLaunch */,
+				96093E851CBF92AB00184619 /* AutoLaunchHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +190,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96093E841CBF92AB00184619 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96093E8F1CBF92AB00184619 /* Assets.xcassets in Resources */,
+				96093E921CBF92AB00184619 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,6 +211,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96093E821CBF92AB00184619 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96093E8D1CBF92AB00184619 /* main.m in Sources */,
+				96093E8A1CBF92AB00184619 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -147,6 +227,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				96093E761CBF914500184619 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		96093E901CBF92AB00184619 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96093E911CBF92AB00184619 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -260,6 +348,30 @@
 			};
 			name = Release;
 		};
+		96093E951CBF92AB00184619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atjason.swift.cocoa.AutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96093E961CBF92AB00184619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.atjason.swift.cocoa.AutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -277,6 +389,14 @@
 			buildConfigurations = (
 				96093E7C1CBF914500184619 /* Debug */,
 				96093E7D1CBF914500184619 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96093E941CBF92AB00184619 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96093E951CBF92AB00184619 /* Debug */,
+				96093E961CBF92AB00184619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
