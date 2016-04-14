@@ -16,11 +16,11 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  // Insert code here to initialize your application
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-  // Insert code here to tear down your application
+  NSArray *pathComponents = [[[NSBundle mainBundle] bundlePath] pathComponents];
+  pathComponents = [pathComponents subarrayWithRange:NSMakeRange(0, [pathComponents count] - 4)];
+  NSString *path = [NSString pathWithComponents:pathComponents];
+  [[NSWorkspace sharedWorkspace] launchApplication:path];
+  [NSApp terminate:nil];
 }
 
 @end
