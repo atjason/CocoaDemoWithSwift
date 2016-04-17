@@ -15,15 +15,50 @@
         <window title="TextField and Enter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="312" height="87"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="312" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4nU-yW-Uw7">
+                        <rect key="frame" x="18" y="50" width="276" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="GjI-ol-6sP">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.label" id="Nde-RR-4EC"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NqP-JE-G0V">
+                        <rect key="frame" x="20" y="20" width="272" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="hfu-yr-pKR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="onTextFieldEntered:" target="-2" id="Swd-j5-Dy4"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NqP-JE-G0V" secondAttribute="bottom" constant="20" id="30k-Sz-Jfw"/>
+                    <constraint firstAttribute="trailing" secondItem="4nU-yW-Uw7" secondAttribute="trailing" constant="20" id="3ze-cq-Liq"/>
+                    <constraint firstItem="NqP-JE-G0V" firstAttribute="top" secondItem="4nU-yW-Uw7" secondAttribute="bottom" constant="8" id="OpD-Qz-AhJ"/>
+                    <constraint firstItem="4nU-yW-Uw7" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="Zln-Wb-VNc"/>
+                    <constraint firstAttribute="trailing" secondItem="NqP-JE-G0V" secondAttribute="trailing" constant="20" id="cil-f5-GtQ"/>
+                    <constraint firstItem="NqP-JE-G0V" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="mDt-tE-Kez"/>
+                    <constraint firstItem="4nU-yW-Uw7" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="weg-Lb-uBh"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+            <point key="canvasLocation" x="194" y="246.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="odn-5n-6RM"/>
     </objects>
 </document>

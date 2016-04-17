@@ -9,7 +9,14 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+  
+  dynamic var label = ""
+  
   override var windowNibName: String? {
     return "MainWindowController"
+  }
+  
+  @IBAction func onTextFieldEntered(sender: NSTextField) {
+    label = sender.stringValue
   }
 }
