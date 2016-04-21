@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowViewContoller" customModule="iHostsIAP" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="6BT-ym-UcD" id="kuW-cr-9Jq"/>
+                <outlet property="productDescriptionLabel" destination="3d0-AS-M3E" id="ucq-sf-74n"/>
+                <outlet property="productTitleLabel" destination="1DG-6t-KdU" id="jRK-au-xZz"/>
+                <outlet property="restoreButton" destination="yie-cF-Q3k" id="c4I-oD-VRC"/>
+                <outlet property="upgradeButton" destination="bbV-e5-eDl" id="oQm-nr-pt9"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="229"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3d0-AS-M3E">
+                    <rect key="frame" x="18" y="95" width="384" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Add at most 10 Hosts nodes." id="Wvo-4u-BqY">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-e5-eDl">
+                    <rect key="frame" x="164" y="34" width="93" height="32"/>
+                    <buttonCell key="cell" type="push" title="Upgrade" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vfh-T7-Dze">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="purchase:" target="-2" id="cu6-Iu-tgT"/>
+                    </connections>
+                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6BT-ym-UcD">
+                    <rect key="frame" x="178" y="145" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="D9X-QX-jaB"/>
+                        <constraint firstAttribute="height" constant="64" id="tgf-sc-5zZ"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="t29-BJ-Hw3"/>
+                </imageView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yie-cF-Q3k">
+                    <rect key="frame" x="188" y="20" width="45" height="14"/>
+                    <buttonCell key="cell" type="bevel" title="Restore" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="0TD-s3-kWy">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="restore:" target="-2" id="1bk-Bk-Xgv"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1DG-6t-KdU">
+                    <rect key="frame" x="18" y="120" width="384" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="iHosts Free" id="YaQ-Ua-8l3">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="yie-cF-Q3k" firstAttribute="top" secondItem="bbV-e5-eDl" secondAttribute="bottom" constant="7" id="361-uA-YcV"/>
+                <constraint firstAttribute="trailing" secondItem="1DG-6t-KdU" secondAttribute="trailing" constant="20" id="4da-So-Hd8"/>
+                <constraint firstItem="3d0-AS-M3E" firstAttribute="top" secondItem="1DG-6t-KdU" secondAttribute="bottom" constant="8" id="MwA-0P-Rs7"/>
+                <constraint firstItem="bbV-e5-eDl" firstAttribute="top" secondItem="3d0-AS-M3E" secondAttribute="bottom" constant="33" id="TG0-vd-0oO"/>
+                <constraint firstAttribute="trailing" secondItem="3d0-AS-M3E" secondAttribute="trailing" constant="20" id="UNv-B9-QQT"/>
+                <constraint firstItem="3d0-AS-M3E" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Xmm-Ym-xxY"/>
+                <constraint firstItem="1DG-6t-KdU" firstAttribute="top" secondItem="6BT-ym-UcD" secondAttribute="bottom" constant="8" id="YH1-dk-uhI"/>
+                <constraint firstItem="1DG-6t-KdU" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="fmc-cy-dxO"/>
+                <constraint firstItem="bbV-e5-eDl" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="hac-c5-Qh9"/>
+                <constraint firstItem="6BT-ym-UcD" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="kDo-Kx-4bB"/>
+                <constraint firstItem="6BT-ym-UcD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="m9a-cq-a1t"/>
+                <constraint firstItem="yie-cF-Q3k" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="y66-aM-js4"/>
+            </constraints>
+            <point key="canvasLocation" x="250" y="315.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="P6P-3y-WhM"/>
+    </objects>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
+</document>
