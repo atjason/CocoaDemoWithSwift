@@ -36,7 +36,9 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="p59-Nu-ZZU"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="ylM-sR-528"/>
+                            <menuItem title="Preferences…" id="ylM-sR-528">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="eNy-Oh-eOz"/>
                             <menuItem title="Services" id="vZD-48-JtE">
                                 <modifierMask key="keyEquivalentModifierMask"/>

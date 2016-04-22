@@ -83,7 +83,8 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="More" id="LKm-AG-3Ky">
                         <items>
-                            <menuItem title="Preferences..." keyEquivalent="," id="AFm-I3-naS">
+                            <menuItem title="Preferences..." id="AFm-I3-naS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showPreferences:" target="nvF-6S-Q8S" id="sQp-Bs-4iZ"/>
                                 </connections>
