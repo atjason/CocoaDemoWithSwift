@@ -88,8 +88,7 @@
                                     <action selector="showPreferences:" target="nvF-6S-Q8S" id="sQp-Bs-4iZ"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Quit" id="xBb-zJ-3u1">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Quit" keyEquivalent="q" id="xBb-zJ-3u1">
                                 <connections>
                                     <action selector="quit:" target="nvF-6S-Q8S" id="1Lq-fb-AOu"/>
                                 </connections>
