@@ -27,6 +27,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   var hiddenWindowController: NSWindowController?
   
+  lazy var preferencesWindowController: PreferencesWindowController = PreferencesWindowController()
+  
   var popover: NSPopover?
   
   // MRAK: - Lifecycle
@@ -211,6 +213,10 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     if (indexOfInsert + 1) == indexToRemove {
       removeMenuItem.enabled = false
     }
+  }
+  
+  @IBAction func showPreferences(sender: NSMenuItem) {
+    preferencesWindowController.showWindow(self)
   }
   
   @IBAction func quit(sender: NSMenuItem) {

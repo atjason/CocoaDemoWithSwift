@@ -83,10 +83,15 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="More" id="LKm-AG-3Ky">
                         <items>
-                            <menuItem title="Quit" id="AFm-I3-naS">
+                            <menuItem title="Preferences..." keyEquivalent="," id="AFm-I3-naS">
+                                <connections>
+                                    <action selector="showPreferences:" target="nvF-6S-Q8S" id="sQp-Bs-4iZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit" id="xBb-zJ-3u1">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="quit:" target="nvF-6S-Q8S" id="LSa-5F-xTt"/>
+                                    <action selector="quit:" target="nvF-6S-Q8S" id="1Lq-fb-AOu"/>
                                 </connections>
                             </menuItem>
                         </items>
