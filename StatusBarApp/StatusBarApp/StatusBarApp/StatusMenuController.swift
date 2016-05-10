@@ -32,6 +32,10 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   lazy var preferencesWindowController: PreferencesWindowController = PreferencesWindowController()
   lazy var popoverViewController: PopoverViewController = PopoverViewController()
   
+  var needsToPopover = false
+  var popoverTimer: NSTimer?
+  let popoverWaitTime: NSTimeInterval = 1
+  
   // MRAK: - Lifecycle
   
   override init() {
@@ -110,6 +114,11 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
   }
   
+  func showPopover() {
+    needsToPopover = true
+    popoverViewController.showPopover(self)
+  }
+  
   // MRAK: - Actions
   @IBAction func showIcon(sender: NSMenuItem) {
     updateStatusItemDisplay(.Icon)
@@ -166,11 +175,25 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   // MRAK: - NSMenuDelegate
   
+  func menuWillOpen(menu: NSMenu) {
+    needsToPopover = false
+  }
+  
   func menu(menu: NSMenu, willHighlightItem item: NSMenuItem?) {
     if item === mouseOverMenuItem {
-      popoverViewController.showPopover(item)
+      if needsToPopover {
+        popoverViewController.showPopover(self)
+      } else {
+        popoverTimer = NSTimer.scheduledTimerWithTimeInterval(
+          popoverWaitTime, target: self, selector: #selector(StatusMenuController.showPopover),
+          userInfo: nil, repeats: false)
+        popoverTimer?.tolerance = popoverWaitTime * 0.1
+        NSRunLoop.currentRunLoop().addTimer(popoverTimer!, forMode: NSRunLoopCommonModes)
+      }
+      
     } else {
       popoverViewController.closePopover(menu)
+      popoverTimer?.invalidate()
     }
   }
 }
