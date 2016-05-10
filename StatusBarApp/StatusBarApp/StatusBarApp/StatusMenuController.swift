@@ -181,6 +181,8 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   func menu(menu: NSMenu, willHighlightItem item: NSMenuItem?) {
     if item === mouseOverMenuItem {
+      popoverViewController.text = "abc"
+      
       if needsToPopover {
         popoverViewController.showPopover(self)
       } else {

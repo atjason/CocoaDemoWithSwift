@@ -10,6 +10,9 @@ import Cocoa
 
 class PopoverViewController: NSViewController {
   
+  @IBOutlet var textView: NSTextView!
+  var text = ""
+  
   private var popover: NSPopover?
   private var hiddenWindowController: NSWindowController?
   
@@ -40,6 +43,7 @@ class PopoverViewController: NSViewController {
           hiddenWindowController?.showWindow(self)
           
           popover?.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MinX)
+          updateTextView()
         }
       }
     }
@@ -61,6 +65,12 @@ class PopoverViewController: NSViewController {
   }
   
   // MARK: - Helper
+  
+  private func updateTextView() {
+    if let textStorage = textView.textStorage {
+      textStorage.replaceCharactersInRange(NSRange(0..<textStorage.length), withString: text)
+    }
+  }
   
   private func initHiddenWindowController() {
     let hiddenWindow = NSWindow()
