@@ -23,13 +23,14 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   @IBOutlet weak var mouseOverMenuItem: NSMenuItem!
   @IBOutlet weak var quitMenuItem: NSMenuItem!
   
-  weak var statusItem: NSStatusItem!
-  
-  var hiddenWindowController: NSWindowController?
+  weak var statusItem: NSStatusItem! {
+    didSet {
+      popoverViewController.statusItem = statusItem
+    }
+  }
   
   lazy var preferencesWindowController: PreferencesWindowController = PreferencesWindowController()
-  
-  var popover: NSPopover?
+  lazy var popoverViewController: PopoverViewController = PopoverViewController()
   
   // MRAK: - Lifecycle
   
@@ -109,66 +110,6 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
   }
   
-  func initHiddenWindowController() {
-    let hiddenWindow = NSWindow()
-    
-    let size = 30 // A small size to let the window be covered by status menu.
-    hiddenWindow.styleMask = NSBorderlessWindowMask
-    hiddenWindow.setFrame(NSRect(x: size, y: size, width: size, height: size), display: true)
-    hiddenWindow.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))
-    
-    hiddenWindowController = NSWindowController()
-    hiddenWindowController?.window = hiddenWindow
-  }
-  
-  func showPopover(sender: AnyObject?) {
-    if popover?.contentViewController == nil {
-      popover = NSPopover()
-      popover?.contentViewController = NSViewController(nibName: "PopoverViewController", bundle: nil)
-    }
-    
-//    if let button = statusItem.button {
-//      popover?.showRelativeToRect(button.bounds, ofView: button, preferredEdge: .MinX)
-//    }
-
-    if hiddenWindowController == nil {
-      initHiddenWindowController()
-    }
-    
-    if let window = hiddenWindowController?.window {
-      
-      if let view = window.contentView {
-        
-        if let statusItemWindow = statusItem.button?.window {
-          
-          var point = NSPoint()
-          point.x = statusItemWindow.frame.origin.x
-          point.y = NSEvent.mouseLocation().y + window.frame.size.height / 2.0
-          window.setFrameTopLeftPoint(point)
-          
-          hiddenWindowController?.showWindow(self)
-          
-          popover?.showRelativeToRect(view.bounds, ofView: view, preferredEdge: .MinX)
-        }
-      }
-    }
-  }
-  
-  func closePopover(sender: AnyObject?) {
-    popover?.performClose(sender)
-    hiddenWindowController?.window?.close()
-  }
-  
-  func togglePopover(sender: AnyObject?) {
-    if let popover = popover {
-      if popover.shown {
-        closePopover(sender)
-      } else {
-        showPopover(sender)
-      }
-    }
-  }
-  
   // MRAK: - Actions
   @IBAction func showIcon(sender: NSMenuItem) {
     updateStatusItemDisplay(.Icon)
@@ -187,7 +128,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   }
   
   @IBAction func mouseOverMenuItem(sender: NSMenuItem) {
-    togglePopover(sender)
+    popoverViewController.togglePopover(sender)
   }
   
   @IBAction func insertMenuItem(sender: NSMenuItem) {
@@ -227,10 +168,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   func menu(menu: NSMenu, willHighlightItem item: NSMenuItem?) {
     if item === mouseOverMenuItem {
-      showPopover(item)
-      //item?.toolTip = ""
+      popoverViewController.showPopover(item)
     } else {
-      closePopover(menu)
+      popoverViewController.closePopover(menu)
     }
   }
 }
