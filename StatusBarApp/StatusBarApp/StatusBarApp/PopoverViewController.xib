@@ -19,11 +19,11 @@
             <subviews>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGn-50-V10">
                     <rect key="frame" x="20" y="20" width="248" height="165"/>
-                    <clipView key="contentView" id="ZYl-LJ-9ZZ">
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="ZYl-LJ-9ZZ">
                         <rect key="frame" x="0.0" y="0.0" width="248" height="165"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView editable="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nbH-XL-abq">
+                            <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="nbH-XL-abq">
                                 <rect key="frame" x="0.0" y="0.0" width="248" height="165"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
