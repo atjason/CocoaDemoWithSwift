@@ -181,7 +181,14 @@ class StatusMenuController: NSObject, NSMenuDelegate {
   
   func menu(menu: NSMenu, willHighlightItem item: NSMenuItem?) {
     if item === mouseOverMenuItem {
-      popoverViewController.text = "abc"
+      // Short
+//      popoverViewController.text = "# "
+      // Single line long line
+      popoverViewController.text = "# popoverTimer = NSTimer.scheduledTimerWithTimeIntervalpopoverTimer = NSTimer.scheduledTimerWithTimeIntervalpopoverTimer = "
+      // Much string
+      for _ in 0..<50 {
+        popoverViewController.text += "\n#192.168.1.80 mydomain.com"
+      }
       
       if needsToPopover {
         popoverViewController.showPopover(self)
