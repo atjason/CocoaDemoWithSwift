@@ -69,6 +69,29 @@ class PopoverViewController: NSViewController {
   private func updateTextView() {
     if let textStorage = textView.textStorage {
       textStorage.replaceCharactersInRange(NSRange(0..<textStorage.length), withString: text)
+      
+      let textSize = textStorage.size()
+      let margin: CGFloat = 80
+      let maxWidth: CGFloat = 400
+      let maxHeight: CGFloat = 700
+      let newWindowSize = NSSize(width: min(maxWidth, textSize.width + margin),
+                                 height: min(maxHeight, textSize.height + margin))
+      
+      if let window = textView.window {
+        let oldWindowFrame = window.frame
+        var newWindowOrigin = oldWindowFrame.origin
+        newWindowOrigin.x += oldWindowFrame.size.width - newWindowSize.width
+        newWindowOrigin.y += (oldWindowFrame.size.height - newWindowSize.height) / 2
+        
+        if let screenSize = NSScreen.mainScreen()?.frame.size {
+          let menuBarHeight: CGFloat = 22
+          if (newWindowOrigin.y + newWindowSize.height) > (screenSize.height - menuBarHeight) {
+            newWindowOrigin.y -= (newWindowOrigin.y + newWindowSize.height) - (screenSize.height - menuBarHeight)
+            newWindowOrigin.y = max(0, newWindowOrigin.y)
+          }
+        }
+        window.setFrame(NSRect.init(origin: newWindowOrigin, size: newWindowSize), display: true)
+      }
     }
   }
   
