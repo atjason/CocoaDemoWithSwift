@@ -14,7 +14,7 @@ print("Origional:         \t" + complexString)
 // urlHostAllowed      "#%/<>?@\^`{|}
 print("urlHostAllowed:    \t" + complexString.encode(.urlHostAllowed))
 
-// urlHostAllowed      "#%;<>?[\]^`{|}
+// urlPathAllowed      "#%;<>?[\]^`{|}
 print("urlPathAllowed:    \t" + complexString.encode(.urlPathAllowed))
 
 // urlQueryAllowed     "#%<>[\]^`{|}
