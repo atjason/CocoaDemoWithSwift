@@ -37,10 +37,10 @@ class MainWindowController: NSWindowController {
   
   // MARK: - Actions
   
-  @IBAction func editNode(sender: NSObject) {
+  @IBAction func editNode(_ sender: NSObject) {
     let row = outlineView.selectedRow
     if row != -1 {
-      outlineView.editColumn(0, row: row, withEvent: nil, select: true)
+      outlineView.editColumn(0, row: row, with: nil, select: true)
     }
   }
 }
