@@ -13,6 +13,7 @@ class MainWindowController: NSWindowController {
   dynamic var nodes = [Node]()
   
   @IBOutlet weak var outlineView: NSOutlineView!
+  @IBOutlet weak var treeController: NSTreeController!
   
   override var windowNibName: String? {
     return "MainWindowController"
@@ -42,5 +43,9 @@ class MainWindowController: NSWindowController {
     if row != -1 {
       outlineView.editColumn(0, row: row, with: nil, select: true)
     }
+  }
+  
+  @IBAction func refresh(_ sender: NSObject!) {
+    treeController.rearrangeObjects()
   }
 }

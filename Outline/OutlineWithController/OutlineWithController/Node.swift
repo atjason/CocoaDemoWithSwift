@@ -10,6 +10,14 @@ import Foundation
 
 class Node: NSObject {
   var title = "Node"
+  var size = 0
+  var isChecked = false {
+    didSet {
+      for node in children {
+        node.isChecked = isChecked
+      }
+    }
+  }
   var children = [Node]()
   
   override init() {
