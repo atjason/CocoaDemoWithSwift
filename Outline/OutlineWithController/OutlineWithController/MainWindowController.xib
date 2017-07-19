@@ -240,7 +240,7 @@
             </connections>
             <point key="canvasLocation" x="204" y="140"/>
         </window>
-        <treeController objectClassName="OutlineWithController.Node" automaticallyPreparesContent="YES" childrenKeyPath="children" preservesSelection="NO" id="tue-T0-aG0">
+        <treeController objectClassName="Node" automaticallyPreparesContent="YES" childrenKeyPath="children" preservesSelection="NO" id="tue-T0-aG0">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.nodes" id="KLa-lz-qna"/>
             </connections>
