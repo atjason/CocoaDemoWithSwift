@@ -17,11 +17,11 @@ class MainWindowController: NSWindowController {
     return "MainWindowController"
   }
   
-  @IBAction func set(sender: NSButton) {
+  @IBAction func set(_ sender: NSButton) {
     
     let appBundleIdentifier = "com.atjason.swift.cocoa.AutoLaunchHelper"
     let autoLaunch = (autoLaunchCheckbox.state == NSOnState)
-    if SMLoginItemSetEnabled(appBundleIdentifier, autoLaunch) {
+    if SMLoginItemSetEnabled(appBundleIdentifier as CFString, autoLaunch) {
       if autoLaunch {
         NSLog("Successfully add login item.")
       } else {

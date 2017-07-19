@@ -9,7 +9,7 @@
 import Cocoa
 
 enum MoveDirection {
-  case Up, Down
+  case up, down
 }
 
 class MainWindowController: NSWindowController,
@@ -62,15 +62,15 @@ class MainWindowController: NSWindowController,
   
   // MARK: - Helper Functions
   
-  func appendItem(item: Node, afterItem: Node?, inout inItems items: [Node]) {
+  func appendItem(_ item: Node, afterItem: Node?, inItems items: inout [Node]) {
     
     if let parent = afterItem?.parent {
       item.parent = parent
     }
     
     if let afterItem = afterItem {
-      if let index = items.indexOf(afterItem) {
-        items.insert(item, atIndex: index + 1)
+      if let index = items.index(of: afterItem) {
+        items.insert(item, at: index + 1)
         
         return
       }
@@ -79,48 +79,48 @@ class MainWindowController: NSWindowController,
     items.append(item)
   }
   
-  func insertItemInOutlineView(item: Node, outlineView: NSOutlineView) {
+  func insertItemInOutlineView(_ item: Node, outlineView: NSOutlineView) {
     
     var index = 0
     var parent: Node? = nil
     
     if let itemParent = item.parent {
-      index = itemParent.children.indexOf(item) ?? 0
+      index = itemParent.children.index(of: item) ?? 0
       
       parent = itemParent
       
     } else {
-      index = nodes.indexOf(item) ?? 0
+      index = nodes.index(of: item) ?? 0
     }
     
-    outlineView.insertItemsAtIndexes(NSIndexSet(index: index),
-                                     inParent: parent, withAnimation: .EffectFade)
+    outlineView.insertItems(at: IndexSet(integer: index),
+                                     inParent: parent, withAnimation: .effectFade)
   }
   
-  func selectItem(item: Node, outlineView: NSOutlineView) {
-    let index = outlineView.rowForItem(item)
+  func selectItem(_ item: Node, outlineView: NSOutlineView) {
+    let index = outlineView.row(forItem: item)
     outlineView.scrollRowToVisible(index)
-    outlineView.selectRowIndexes(NSIndexSet(index: index), byExtendingSelection: false)
+    outlineView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
   }
   
-  func editSelectedItemInOutlineView(outlineView: NSOutlineView) {
+  func editSelectedItemInOutlineView(_ outlineView: NSOutlineView) {
     let row = outlineView.selectedRow
     if row != -1 {
-      outlineView.editColumn(0, row: row, withEvent: nil, select: true)
+      outlineView.editColumn(0, row: row, with: nil, select: true)
     }
   }
   
-  func removeItem(item: Node, inout itemArray: [Node]) {
-    if let index = itemArray.indexOf(item) {
-      itemArray.removeAtIndex(index)
+  func removeItem(_ item: Node, itemArray: inout [Node]) {
+    if let index = itemArray.index(of: item) {
+      itemArray.remove(at: index)
     }
   }
   
-  func moveItem(item: Node, inout itemArray: [Node], direction: MoveDirection) {
-    if let index = itemArray.indexOf(item) {
+  func moveItem(_ item: Node, itemArray: inout [Node], direction: MoveDirection) {
+    if let index = itemArray.index(of: item) {
       var toIndex = index
       switch direction {
-      case .Up:
+      case .up:
         toIndex -= 1
       default:
         toIndex += 1
@@ -132,8 +132,8 @@ class MainWindowController: NSWindowController,
     }
   }
   
-  func moveItemInOutlineView(direction: MoveDirection) {
-    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+  func moveItemInOutlineView(_ direction: MoveDirection) {
+    if let selectedItem = outlineView.item(atRow: outlineView.selectedRow) as? Node {
       
       if let parent = selectedItem.parent {
         moveItem(selectedItem, itemArray: &parent.children, direction: direction)
@@ -147,15 +147,15 @@ class MainWindowController: NSWindowController,
     }
   }
   
-  func canMoveItemInOutlineView(direction: MoveDirection) -> Bool {
+  func canMoveItemInOutlineView(_ direction: MoveDirection) -> Bool {
     
-    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+    if let selectedItem = outlineView.item(atRow: outlineView.selectedRow) as? Node {
       
-      let index = outlineView.childIndexForItem(selectedItem)
-      let count = outlineView.numberOfChildrenOfItem(selectedItem.parent)
+      let index = outlineView.childIndex(forItem: selectedItem)
+      let count = outlineView.numberOfChildren(ofItem: selectedItem.parent)
       
       switch direction {
-      case .Up:
+      case .up:
         return index > 0
       default:
         return index < (count - 1)
@@ -179,17 +179,17 @@ class MainWindowController: NSWindowController,
       
       actionButtonEnabled = true
       editMenuItemEnabled = true
-      moveUpMenuItemEnabled = canMoveItemInOutlineView(.Up)
-      moveDownMenuItemEnabled = canMoveItemInOutlineView(.Down)
+      moveUpMenuItemEnabled = canMoveItemInOutlineView(.up)
+      moveDownMenuItemEnabled = canMoveItemInOutlineView(.down)
     }
   }
   
   // MARK: - Actions
   
-  @IBAction func addNode(sender: NSObject) {
+  @IBAction func addNode(_ sender: NSObject) {
     let item = Node()
     
-    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+    if let selectedItem = outlineView.item(atRow: outlineView.selectedRow) as? Node {
       
       // For root item or group
       if selectedItem.parent == nil || selectedItem.isGroup {
@@ -216,13 +216,13 @@ class MainWindowController: NSWindowController,
     editSelectedItemInOutlineView(outlineView)
   }
   
-  @IBAction func addGroup(sender: NSObject) {
+  @IBAction func addGroup(_ sender: NSObject) {
     let item = Node()
     
     item.title = "Group"
     item.isGroup = true
     
-    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+    if let selectedItem = outlineView.item(atRow: outlineView.selectedRow) as? Node {
       
       // For root item or group
       if selectedItem.parent == nil || selectedItem.isGroup {
@@ -255,8 +255,8 @@ class MainWindowController: NSWindowController,
   
   // MARK: - NSOutlineViewDataSource
   
-  func outlineView(outlineView: NSOutlineView,
-                   child index: Int, ofItem item: AnyObject?) -> AnyObject {
+  func outlineView(_ outlineView: NSOutlineView,
+                   child index: Int, ofItem item: Any?) -> Any {
     
     if item == nil { // Case of virtual root
       return nodes[index]
@@ -271,8 +271,8 @@ class MainWindowController: NSWindowController,
     }
   }
   
-  func outlineView(outlineView: NSOutlineView,
-                   isItemExpandable item: AnyObject) -> Bool {
+  func outlineView(_ outlineView: NSOutlineView,
+                   isItemExpandable item: Any) -> Bool {
     guard let node = item as? Node else {
       print("Error: invalid object.")
       return false
@@ -281,8 +281,8 @@ class MainWindowController: NSWindowController,
     return node.children.count > 0
   }
   
-  func outlineView(outlineView: NSOutlineView,
-                   numberOfChildrenOfItem item: AnyObject?) -> Int {
+  func outlineView(_ outlineView: NSOutlineView,
+                   numberOfChildrenOfItem item: Any?) -> Int {
     
     if item == nil { // Case of virtual root
       return nodes.count
@@ -296,9 +296,9 @@ class MainWindowController: NSWindowController,
     }
   }
   
-  func outlineView(outlineView: NSOutlineView,
-                   objectValueForTableColumn tableColumn: NSTableColumn?,
-                                             byItem item: AnyObject?) -> AnyObject? {
+  func outlineView(_ outlineView: NSOutlineView,
+                   objectValueFor tableColumn: NSTableColumn?,
+                                             byItem item: Any?) -> Any? {
     guard let node = item as? Node else {
       print("Error: invalid object.")
       return nil
@@ -307,11 +307,11 @@ class MainWindowController: NSWindowController,
     return node
   }
   
-  @IBAction func removeItem(sender: NSButton) {
+  @IBAction func removeItem(_ sender: NSButton) {
     
     let selectedRow = outlineView.selectedRow
     
-    if let selectedItem = outlineView.itemAtRow(outlineView.selectedRow) as? Node {
+    if let selectedItem = outlineView.item(atRow: outlineView.selectedRow) as? Node {
       
       // For root item
       if selectedItem.parent == nil && !selectedItem.isGroup {
@@ -344,7 +344,7 @@ class MainWindowController: NSWindowController,
       }
       
       outlineView.scrollRowToVisible(newSelectedRow)
-      outlineView.selectRowIndexes(NSIndexSet(index: newSelectedRow), byExtendingSelection: false)
+      outlineView.selectRowIndexes(IndexSet(integer: newSelectedRow), byExtendingSelection: false)
       
       if newSelectedRow == -1 {
         // Note: when remove last item, outlineViewSelectionDidChange will not be called.
@@ -354,21 +354,21 @@ class MainWindowController: NSWindowController,
     }
   }
   
-  @IBAction func editSelectedItem(sender: NSObject) {
+  @IBAction func editSelectedItem(_ sender: NSObject) {
     editSelectedItemInOutlineView(outlineView)
   }
   
-  @IBAction func moveItemUp(sender: NSObject) {
-    moveItemInOutlineView(.Up)
+  @IBAction func moveItemUp(_ sender: NSObject) {
+    moveItemInOutlineView(.up)
   }
   
-  @IBAction func moveItemDown(sender: NSObject) {
-    moveItemInOutlineView(.Down)
+  @IBAction func moveItemDown(_ sender: NSObject) {
+    moveItemInOutlineView(.down)
   }
   
   // MARK: - NSOutlineViewDelegate
   
-  func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool {
+  func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
     
     guard let node = item as? Node else {
       return false
@@ -377,15 +377,15 @@ class MainWindowController: NSWindowController,
     return node.isGroup
   }
   
-  func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?,
-                   item: AnyObject) -> NSView? {
+  func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?,
+                   item: Any) -> NSView? {
     // For a group row, the tableColumn == nil.
     // In this case use get the column by outlineView.tableColumns[0]
     let identifier = tableColumn?.identifier ?? outlineView.tableColumns[0].identifier
-    return outlineView.makeViewWithIdentifier(identifier, owner: self)
+    return outlineView.make(withIdentifier: identifier, owner: self)
   }
   
-  func outlineViewSelectionDidChange(notification: NSNotification) {
+  func outlineViewSelectionDidChange(_ notification: Notification) {
     updateUIStatus()
   }
 }
